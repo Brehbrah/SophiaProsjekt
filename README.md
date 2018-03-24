@@ -1,3 +1,1 @@
 # SophiaProsjekt
-
-test vidar
