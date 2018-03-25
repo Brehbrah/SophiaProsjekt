@@ -15,5 +15,5 @@ function endreØvelse(valg) {
    		document.getElementById("antLabel").innerHTML = "Antall øvelser";
         break;
 	}
-	
 }
+
