@@ -1,5 +1,4 @@
 -- SQL script som oppretter databasetabeller for Sophia prosjektet
-------------------------------------------------------------------
 
 -- Slett tabeller hvis de eksisterer fra før
 DROP TABLE IF EXISTS Bruker;
