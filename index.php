@@ -48,7 +48,6 @@ topp();
 					<input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
 					<input type="checkbox" class="checkbox" id="remember_me">
 					<label for="remember_me">Remember me</label>
-
 					<input type="submit" class="button" value="Login">
 				</form><!--.login-form-->
 				<div class="help-text">
