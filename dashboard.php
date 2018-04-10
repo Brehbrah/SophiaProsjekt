@@ -1,5 +1,8 @@
 <?php
+session_start();
 include_once "funksjoner.php";
+
+$bruker = $_SESSION['brukernavn'];
 
 topp();
 ?>
@@ -13,7 +16,7 @@ topp();
 
     <section class="jumbotron text-center">
       <div class="container">
-        <h1 class="jumbotron-heading">Hei, bruker!</h1>
+        <h1 class="jumbotron-heading">Hei, <?php echo "$bruker"; ?>!</h1>
         <p class="lead text-muted">Mitt navn er Sophia, din personlige veileder.</p>
         <hr class="my-4">
         <p class="lead text-muted">Velkommen til ditt dashboard, hva vil du gjøre nå?</p>

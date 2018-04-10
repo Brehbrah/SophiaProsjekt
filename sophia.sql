@@ -9,9 +9,8 @@ DROP TABLE IF EXISTS Bruker;
 CREATE TABLE IF NOT EXISTS Bruker (
   BNr int(5) NOT NULL AUTO_INCREMENT,
   Epost varchar(40) UNIQUE NOT NULL,
+  Brukernavn varchar(20) NOT NULL,
   Passord varchar(20) DEFAULT NULL,
-  Fornavn varchar(20) NOT NULL,
-  Etternavn varchar(20) NOT NULL,
   PRIMARY KEY (BNr)
 ) ENGINE=InnoDB;
 
@@ -19,9 +18,5 @@ CREATE TABLE IF NOT EXISTS Bruker (
 
 -- Data for tabell Bruker
 -- BNr autonummerert (!)
-INSERT INTO Bruker (Epost, Passord, Fornavn, Etternavn) VALUES
-('vidar@abc.com', 'hemmelig', 'Vidar', 'Aarvik'),
-('jola@xyz.no', 'ksn23h', 'Joakim', 'Laursen'),
-('laur88@xyz.no', 'alen6s', 'Laurits', 'Eckhoff'),
-('aasae@zzz.se', 's7wu2b', 'Åshild', 'Sætran'),
-('toroe@xyz.no', 'mskw6e', 'Torgrim', 'Østbø');
+INSERT INTO Bruker (Epost, Brukernavn, Passord) VALUES
+('vidaraarvik@gmail.com', 'vidaraarvik', 'test');

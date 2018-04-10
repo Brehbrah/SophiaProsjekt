@@ -1,5 +1,11 @@
 <?php
+session_start();
 include_once "funksjoner.php";
+include_once "database.php";
+
+
+$dblink = kobleOpp();
+include_once "logginn.php";
 
 topp();
 ?>
@@ -30,9 +36,9 @@ topp();
 		<div class="tabs-content">
 			<div id="signup-tab-content" class="active">
 				<form class="signup-form" action="" method="post">
-					<input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email">
-					<input type="text" class="input" id="user_name" autocomplete="off" placeholder="Username">
-					<input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
+					<input type="email" class="input" id="signup_email" autocomplete="off" placeholder="Email">
+					<input type="text" class="input" id="signup_name" autocomplete="off" placeholder="Username">
+					<input type="password" class="input" id="signup_pass" autocomplete="off" placeholder="Password">
 					<input type="submit" class="button" value="Sign Up">
 				</form><!--.login-form-->
 				<div class="help-text">
@@ -44,8 +50,8 @@ topp();
 
 			<div id="login-tab-content">
 				<form class="login-form" action="" method="post">
-					<input type="text" class="input" id="user_login" autocomplete="off" placeholder="Email or Username">
-					<input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
+					<input type="text" class="input" name="brukernavn" autocomplete="off" placeholder="Email or Username">
+					<input type="password" class="input" name="passord" autocomplete="off" placeholder="Password">
 					<input type="checkbox" class="checkbox" id="remember_me">
 					<label for="remember_me">Remember me</label>
 					<input type="submit" class="button" value="Login">
@@ -54,9 +60,14 @@ topp();
 					<p><a href="#">Forget your password?</a></p>
 				</div><!--.help-text-->
 			</div><!--.login-tab-content-->
+			
+
 		</div><!--.tabs-content-->
 	</div><!--.form-wrap-->
 		    </div>
 		</div>
 
-<?php bunn(); ?>
+<?php 
+lukk($dblink);
+bunn(); 
+?>
