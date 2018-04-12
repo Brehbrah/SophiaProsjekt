@@ -26,6 +26,8 @@ function gyldigBruker($dblink, $brukernavn, $passord) {
   if ($antall == 1) {
     $rad = mysqli_fetch_assoc($resultat);
 
+    $_SESSION['innlogget'] = true;
+    $_SESSION['bnr'] = $rad['BNr'];
     $_SESSION['epost'] = $rad['Epost'];
     $_SESSION['brukernavn'] = $rad['Brukernavn'];
 
@@ -43,6 +45,13 @@ function sjekkInnlogging() {
     session_destroy();
     header("Location: index.php");
   }
+}
+
+// Legger til en ny øvelse i databasen (treningsdagbok)
+function leggTilØvelse($dblink, $bnr, $dato, $øvelse, $tid, $antall) {
+  $sql = "INSERT INTO Treningsøkt (Dato, BNr, Øvelse, Minutter, Antall) VALUES ('$dato', $bnr, '$øvelse', $tid, $antall)";
+  $resultat = mysqli_query($dblink, $sql);
+  return $resultat;
 }
 
 // Henter ut varer med navn som inneholder søketeksten

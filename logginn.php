@@ -1,8 +1,9 @@
 <?php
+$dblink = kobleOpp();
 $innlogget = false;
 $melding = "";
 
-if (isset($_REQUEST["brukernavn"]) && isset($_REQUEST["passord"])) {
+if (isset($_POST["brukernavn"]) && isset($_POST["passord"])) {
 
   // NB! Prepared statements er en bedre løsning enn mysqli_real_escape_string
   $brukernavn = mysqli_real_escape_string($dblink, $_REQUEST['brukernavn']);

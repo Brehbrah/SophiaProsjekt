@@ -4,7 +4,7 @@ include_once "funksjoner.php";
 include_once "database.php";
 
 
-$dblink = kobleOpp();
+
 include_once "logginn.php";
 
 topp();
