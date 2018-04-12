@@ -32,7 +32,33 @@ function gyldigBruker($dblink, $brukernavn, $passord) {
     $_SESSION['epost'] = $rad['Epost'];
     $_SESSION['brukernavn'] = $rad['Brukernavn'];
 
-    // Må bruke password_hash og password_verify senere 
+    // TODO: Må bruke password_hash og password_verify senere 
+    // for å unngå lagring av passord i klartekst.
+    $ok = true;
+  }
+  return $ok;
+}
+
+function registrerBruker($dblink, $epost, $brukernavn, $passord) {
+  $ok = false;
+  $_SESSION['innlogget'] = false;
+  // TODO: passord må hashes først
+  $sql = "INSERT INTO Bruker (Epost, Brukernavn, Passord) VALUES ('$epost', '$brukernavn', '$passord')";
+  $resultat = mysqli_query($dblink, $sql);
+
+  // Søker opp den nye brukeren for å hente BNr
+  $sql = "SELECT * FROM bruker WHERE Brukernavn = '$brukernavn' AND Passord = '$passord'";
+  $resultat = mysqli_query($dblink, $sql);
+  $antall = mysqli_num_rows($resultat);
+  if ($antall == 1) {
+    $rad = mysqli_fetch_assoc($resultat);
+    
+    $_SESSION['innlogget'] = true;
+    $_SESSION['bnr'] = $rad['BNr'];
+    $_SESSION['epost'] = $rad['Epost'];
+    $_SESSION['brukernavn'] = $rad['Brukernavn'];
+
+    // TODO: Må bruke password_hash og password_verify senere 
     // for å unngå lagring av passord i klartekst.
     $ok = true;
   }

@@ -1,8 +1,6 @@
 <?php
 session_start();
 include_once "funksjoner.php";
-include_once "database.php";
-include_once "logginn.php";
 
 topp();
 ?>
@@ -31,12 +29,12 @@ topp();
 
 		<div class="tabs-content">
 			<div id="signup-tab-content" class="active">
-				<form class="signup-form" action="" method="post">
-					<input type="email" class="input" id="signup_email" autocomplete="off" placeholder="Epost">
-					<input type="text" class="input" id="signup_brukernavn" autocomplete="off" placeholder="Brukernavn">
-					<input type="password" class="input" id="signup_passord" autocomplete="off" placeholder="Passord">
+				<form class="signup-form" action="registrer.php" method="post">
+					<input type="email" class="input" name="signup_epost" autocomplete="off" placeholder="Epost" required>
+					<input type="text" class="input" name="signup_brukernavn" autocomplete="off" placeholder="Brukernavn" required>
+					<input type="password" class="input" name="signup_passord" autocomplete="off" placeholder="Passord" required>
 					<input type="submit" class="button" value="Registrer">
-				</form><!--.login-form-->
+				</form><!--.signup-form-->
 				<div class="help-text">
 					<br>
 					<br>
@@ -45,9 +43,9 @@ topp();
 			</div><!--.signup-tab-content-->
 
 			<div id="login-tab-content">
-				<form class="login-form" action="" method="post">
-					<input type="text" class="input" name="brukernavn" autocomplete="off" placeholder="Epost eller Brukernavn">
-					<input type="password" class="input" name="passord" autocomplete="off" placeholder="Passord">
+				<form class="login-form" action="logginn.php" method="post">
+					<input type="text" class="input" name="brukernavn" autocomplete="off" placeholder="Epost eller Brukernavn" required>
+					<input type="password" class="input" name="passord" autocomplete="off" placeholder="Passord" required>
 					<input type="checkbox" class="checkbox" id="remember_me">
 					<label for="remember_me">Husk meg</label>
 					<input type="submit" class="button" value="Logg inn">
@@ -68,6 +66,5 @@ topp();
 		</footer>
 
 <?php 
-lukk($dblink);
 bunn(); 
 ?>
