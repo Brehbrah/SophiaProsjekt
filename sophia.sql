@@ -1,8 +1,8 @@
 -- SQL script som oppretter databasetabeller for Sophia prosjektet
 
 -- Slett tabeller hvis de eksisterer fra før
-DROP TABLE IF EXISTS Bruker;
 DROP TABLE IF EXISTS Treningsøkt;
+DROP TABLE IF EXISTS Bruker;
 
 
 
@@ -18,7 +18,8 @@ CREATE TABLE IF NOT EXISTS Bruker (
 -- Data for tabell Bruker
 -- BNr er autonummerert (!)
 INSERT INTO Bruker (Epost, Brukernavn, Passord) VALUES
-('vidaraarvik@gmail.com', 'vidaraarvik', 'test');
+('vidaraarvik@gmail.com', 'vidaraarvik', 'test'),
+('ola@gmail.com', 'ola', 'passord');
 
 
 
@@ -41,7 +42,23 @@ CREATE TABLE IF NOT EXISTS Treningsøkt (
 -- Data for tabell Treningsøkt
 -- ØktNr er autonummerert (!)
 INSERT INTO Treningsøkt (Dato, BNr, Øvelse, Minutter, Antall) VALUES
-('2018-04-11', 1, 'Svømming', 30, 4);
+('2018-04-04', 1, 'Svømming', 60, 6),
+('2018-04-04', 1, 'Vektløfting', 20, 3),
+('2018-04-04', 1, 'Svømming', 31, 3),
+('2018-04-04', 1, 'Løping', 30, 4),
+('2018-04-04', 1, 'Sykling', 45, 4),
+('2018-04-04', 1, 'Vektløfting', 20, 2),
+('2018-04-04', 1, 'Vektløfting', 60, 6),
+('2018-04-04', 1, 'Vektløfting', 40, 3),
+('2018-04-05', 1, 'Svømming', 30, 4),
+('2018-04-05', 1, 'Svømming', 30, 4),
+('2018-04-05', 1, 'Vektløfting', 30, 4),
+('2018-04-05', 1, 'Svømming', 30, 4),
+('2018-04-05', 2, 'Svømming', 30, 4),
+('2018-04-05', 2, 'Vektløfting', 30, 4),
+('2018-04-05', 2, 'Svømming', 30, 4),
+('2018-04-05', 2, 'Vektløfting', 30, 4),
+('2018-04-05', 2, 'Svømming', 30, 4);
 
 
 
