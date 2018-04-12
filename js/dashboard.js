@@ -1,8 +1,12 @@
 $(document).ready(function(e) {
 
-
   $("#dato").change(function() {
-      document.getElementById("treningsdata").innerHTML = "<br><p>testtest</p>";
+    function visØvelser(data) {
+      $("#display").html(data);
+    }
+
+    var dato = this.value;
+    $.post("hentdata.php", {data: dato}, visØvelser, "text");
   });
 
   $("#øvelse").change(function() {

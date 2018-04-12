@@ -60,7 +60,7 @@ topp();
 		    <input type="submit" value="Legg til" class="btn btn-primary btn-sm">
 		  </div>
 		</form>
-		<div id="treningsdata"></div>
+		<div id="display"></div>
 	</div>
 
 

@@ -1,5 +1,6 @@
 <?php
 include_once "db/globals.php";
+$dblink = kobleOpp();
 
 // Etablerer forbindelse til databasen
 function kobleOpp() {
@@ -54,50 +55,31 @@ function leggTilØvelse($dblink, $bnr, $dato, $øvelse, $tid, $antall) {
   return $resultat;
 }
 
-// Henter ut varer med navn som inneholder søketeksten
-function hentVarer($dblink, $varenavn) {
-  $sql = "SELECT * FROM Vare " .
-         "WHERE Betegnelse LIKE '%" . $varenavn . "%' " .
-         "ORDER BY Betegnelse;";
-  return mysqli_query($dblink, $sql);
-}
+// Henter samtlige øvelser på gitt dato og bruker fra databasen
+function hentØvelser($dblink, $bnr, $dato) { 
+  $sql = "SELECT * FROM Treningsøkt WHERE BNr = $bnr AND Dato = '$dato'"; 
+  $svar = mysqli_query($dblink, $sql); 
+  $data = "<table border='1px' id='displayøvelser'>" . 
+            "<tr>" . 
+              "<th>Dato</th>" . 
+              "<th>Øvelse</th>" . 
+              "<th>min</th>" . 
+              "<th>km/øvelser</th>";
 
-// Henter en vare med gitt varekode
-function hentVare($dblink, $varekode) {
-  $sql = "SELECT * FROM Vare " .
-         "WHERE Varekode='" . $varekode . "';";
-  $resultat = mysqli_query($dblink, $sql);
-  $varerad = mysqli_fetch_array($resultat, MYSQL_ASSOC);
-  return $varerad;
-}
+  while($rad = mysqli_fetch_assoc($svar)) { 
+    $data .= "<tr>" .
+                "<td>" . $rad['Dato'] . "</td>" .
+                "<td>" . $rad['Øvelse'] . "</td>" .
+                "<td>" . $rad['Minutter'] . "</td>" .
+                "<td>" . $rad['Antall'] . "</td>" .
+              "</tr>";
+  }
 
-// Henter de mest solgte varene
-function hentBestselgere($dblink, $n) {
-  $sql = "SELECT OL.*,  SUM(OL.Antall*OL.PrisPrEnhet) AS SamletSalg, V.Betegnelse " .
-         "FROM Ordrelinje AS OL, Vare AS V " .
-         "WHERE OL.Varekode = V.Varekode " .
-         "GROUP BY OL.Varekode " .
-         "ORDER BY SUM(OL.Antall*OL.PrisPrEnhet) DESC " .
-         "LIMIT $n";
-  return mysqli_query($dblink, $sql);
-}
+  mysqli_close($dblink); 
+  return $data; 
+} 
 
-// Sett inn rad i tabell med autonummerert primærnøkkel,
-// og returner primærnøkkelverdien.
-function settInn($dblink, $sql) {
-  $ok = mysqli_query($dblink, $sql);
-  if (!$ok)
-    die('<p>Feil i SQL: ' . $sql . ' - ' . mysqli_error($dblink) . '</p>');
-  return mysqli_insert_id($dblink);
-}
 
-// Utfør SQL-spørring og returner første rad.
-function hentForsteRad($dblink, $sql) { 
-  $resultat = mysqli_query($dblink, $sql);
-  if (!$resultat)
-    die('<p>Feil i SQL: ' . $sql . ' - ' . mysqli_error($dblink) . '</p>');
-  $rad = mysqli_fetch_assoc($resultat);
-  return $rad;
-}
+
 
 ?>
