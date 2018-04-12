@@ -7,11 +7,13 @@ $dato = "";
 if (isset($_REQUEST['data'])) { 
   $dato = $_REQUEST['data']; 
 
-  $alle = hentØvelser($dblink, $_SESSION['bnr'], $dato);
+  $alle = hentTreninger($dblink, $_SESSION['bnr'], $dato);
 
   echo "$alle";
 } else { 
-	echo "Treningsdagboken er tom for valgt dato";
+	$alle = hentAlleTreninger($dblink, $_SESSION['bnr']);
+
+  	echo "$alle";
 }
 
 ?>

@@ -55,9 +55,36 @@ function leggTilØvelse($dblink, $bnr, $dato, $øvelse, $tid, $antall) {
   return $resultat;
 }
 
-// Henter samtlige øvelser på gitt dato og bruker fra databasen
-function hentØvelser($dblink, $bnr, $dato) { 
+// Henter samtlige øvelser på gitt dato til innlogget bruker
+function hentTreninger($dblink, $bnr, $dato) { 
   $sql = "SELECT * FROM Treningsøkt WHERE BNr = $bnr AND Dato = '$dato'"; 
+  $svar = mysqli_query($dblink, $sql); 
+  $data = "<table class='table table-sm table-hover' id='displayøvelser'>" . 
+            "<thead class='thead-dark'>" . 
+              "<tr>" . 
+                "<th>Dato</th>" . 
+                "<th>Øvelse</th>" . 
+                "<th>min</th>" . 
+                "<th>km/øvelser</th>" . 
+            "</thead>";
+
+  while($rad = mysqli_fetch_assoc($svar)) { 
+    $data .= "<tr class='table-success'>" .
+                "<td>" . $rad['Dato'] . "</td>" .
+                "<td>" . $rad['Øvelse'] . "</td>" .
+                "<td>" . $rad['Minutter'] . "</td>" .
+                "<td>" . $rad['Antall'] . "</td>" .
+              "</tr>";
+  }
+
+  mysqli_close($dblink); 
+  return $data; 
+}
+
+
+// Henter samtlige øvelser til innlogget bruker
+function hentAlleTreninger($dblink, $bnr) { 
+  $sql = "SELECT * FROM Treningsøkt WHERE BNr = $bnr"; 
   $svar = mysqli_query($dblink, $sql); 
   $data = "<table class='table table-sm table-hover' id='displayøvelser'>" . 
             "<thead class='thead-dark'>" . 

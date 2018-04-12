@@ -1,12 +1,20 @@
 $(document).ready(function(e) {
 
+  $("#visAlleBtn").click(function() {
+    function visAlleTreninger(data) {
+      $("#displayAlle").html(data);
+    }
+
+    $.post("hentdata.php", visAlleTreninger, "text");
+  });
+
   $("#dato").change(function() {
-    function visØvelser(data) {
+    function visTreninger(data) {
       $("#display").html(data);
     }
 
     var dato = this.value;
-    $.post("hentdata.php", {data: dato}, visØvelser, "text");
+    $.post("hentdata.php", {data: dato}, visTreninger, "text");
   });
 
   $("#øvelse").change(function() {
