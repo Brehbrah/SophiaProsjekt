@@ -10,10 +10,9 @@ topp();
 ?>
 
 	<div class='topnav'>
-		<a href='index.php'>Home</a>
-		<!-- <a href='#news'>Login</a> -->
-		<a href='#contact'>Contact</a>
-		<a href='#about'>About</a>
+		<a href='loggut.php'>Logg ut</a>
+		<a href='#contact'>Kontakt</a>
+		<a href='#about'>Om oss</a>
 	</div>
 
     <section class="jumbotron text-center">
@@ -34,7 +33,7 @@ topp();
     <section class="text-center">
         <p>
           <a class="btn btn-info btn" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" id="visAlleBtn">
-            Mine treningsinnlegg
+            Se mine treningsinnlegg
           </a>
         </p>
         <div class="collapse" id="collapseExample">

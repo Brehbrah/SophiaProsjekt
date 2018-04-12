@@ -2,18 +2,15 @@
 session_start();
 include_once "funksjoner.php";
 include_once "database.php";
-
-
-
 include_once "logginn.php";
 
 topp();
 ?>
 
 	<div class="topnav">
-		  <a class="active" href="index.php">Home</a>
-		  <a href="contact.php">Contact</a>
-		  <a href="about.php">About</a>
+		  <a class="active" href="index.php">Hjem</a>
+		  <a href="contact.php">Kontakt</a>
+		  <a href="about.php">Om oss</a>
 	</div>
 
 	<div class = "split left">
@@ -28,17 +25,17 @@ topp();
 		    <div class = "box">
 		    	<div class="form-wrap">
 		<div class="tabs">
-			<h3 class="signup-tab"><a class="active" href="#signup-tab-content">Sign Up</a></h3>
-			<h3 class="login-tab"><a href="#login-tab-content">Login</a></h3>
+			<h3 class="signup-tab"><a class="active" href="#signup-tab-content">Registrer</a></h3>
+			<h3 class="login-tab"><a href="#login-tab-content">Logg inn</a></h3>
 		</div><!--.tabs-->
 
 		<div class="tabs-content">
 			<div id="signup-tab-content" class="active">
 				<form class="signup-form" action="" method="post">
-					<input type="email" class="input" id="signup_email" autocomplete="off" placeholder="Email">
-					<input type="text" class="input" id="signup_name" autocomplete="off" placeholder="Username">
-					<input type="password" class="input" id="signup_pass" autocomplete="off" placeholder="Password">
-					<input type="submit" class="button" value="Sign Up">
+					<input type="email" class="input" id="signup_email" autocomplete="off" placeholder="Epost">
+					<input type="text" class="input" id="signup_brukernavn" autocomplete="off" placeholder="Brukernavn">
+					<input type="password" class="input" id="signup_passord" autocomplete="off" placeholder="Passord">
+					<input type="submit" class="button" value="Registrer">
 				</form><!--.login-form-->
 				<div class="help-text">
 					<br>
@@ -49,14 +46,14 @@ topp();
 
 			<div id="login-tab-content">
 				<form class="login-form" action="" method="post">
-					<input type="text" class="input" name="brukernavn" autocomplete="off" placeholder="Email or Username">
-					<input type="password" class="input" name="passord" autocomplete="off" placeholder="Password">
+					<input type="text" class="input" name="brukernavn" autocomplete="off" placeholder="Epost eller Brukernavn">
+					<input type="password" class="input" name="passord" autocomplete="off" placeholder="Passord">
 					<input type="checkbox" class="checkbox" id="remember_me">
-					<label for="remember_me">Remember me</label>
-					<input type="submit" class="button" value="Login">
+					<label for="remember_me">Husk meg</label>
+					<input type="submit" class="button" value="Logg inn">
 				</form><!--.login-form-->
 				<div class="help-text">
-					<p><a href="#">Forget your password?</a></p>
+					<p><a href="#">Glemt ditt passord?</a></p>
 				</div><!--.help-text-->
 			</div><!--.login-tab-content-->
 			
@@ -67,7 +64,7 @@ topp();
 		</div>
 		
 		<footer>
-			<p> © Sophia | Email: support@sophia.no | Telephone: 4444 4444 </p>
+			<p> © Sophia | Epost: support@sophia.no | Telefon: 4444 4444 </p>
 		</footer>
 
 <?php 

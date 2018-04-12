@@ -9,12 +9,11 @@ $bruker = $_SESSION['brukernavn'];
 topp();
 ?>
 
-	<div class='topnav'>
-		<a href='index.php'>Home</a>
-		<!-- <a href='#news'>Login</a> -->
-		<a href='#contact'>Contact</a>
-		<a href='#about'>About</a>
-	</div>
+  <div class='topnav'>
+    <a href='loggut.php'>Logg ut</a>
+    <a href='#contact'>Kontakt</a>
+    <a href='#about'>Om oss</a>
+  </div>
 
     <section class="jumbotron text-center">
       <div class="container">
