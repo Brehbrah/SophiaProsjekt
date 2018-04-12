@@ -59,15 +59,17 @@ function leggTilØvelse($dblink, $bnr, $dato, $øvelse, $tid, $antall) {
 function hentØvelser($dblink, $bnr, $dato) { 
   $sql = "SELECT * FROM Treningsøkt WHERE BNr = $bnr AND Dato = '$dato'"; 
   $svar = mysqli_query($dblink, $sql); 
-  $data = "<table border='1px' id='displayøvelser'>" . 
-            "<tr>" . 
-              "<th>Dato</th>" . 
-              "<th>Øvelse</th>" . 
-              "<th>min</th>" . 
-              "<th>km/øvelser</th>";
+  $data = "<table class='table table-sm table-hover' id='displayøvelser'>" . 
+            "<thead class='thead-dark'>" . 
+              "<tr>" . 
+                "<th>Dato</th>" . 
+                "<th>Øvelse</th>" . 
+                "<th>min</th>" . 
+                "<th>km/øvelser</th>" . 
+            "</thead>";
 
   while($rad = mysqli_fetch_assoc($svar)) { 
-    $data .= "<tr>" .
+    $data .= "<tr class='table-success'>" .
                 "<td>" . $rad['Dato'] . "</td>" .
                 "<td>" . $rad['Øvelse'] . "</td>" .
                 "<td>" . $rad['Minutter'] . "</td>" .

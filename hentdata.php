@@ -14,7 +14,4 @@ if (isset($_REQUEST['data'])) {
 	echo "Treningsdagboken er tom for valgt dato";
 }
 
-
-//echo json_encode(array("treff"=>$alle)); 
-
 ?>
