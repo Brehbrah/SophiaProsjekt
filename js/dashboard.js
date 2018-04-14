@@ -1,5 +1,13 @@
 $(document).ready(function(e) {
 
+
+  // Henter brukerens preferanser fra databasen
+  function visPreferanser(data) {
+    $("#valgtePreferanser").html(data);
+  }
+  $.post("hentpreferanser.php", visPreferanser, "text");
+
+
   // Henter brukerens treningsinnlegg fra databasen
   $("#visAlleBtn").click(function() {
     function visAlleTreninger(data) {

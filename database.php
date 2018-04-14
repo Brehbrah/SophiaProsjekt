@@ -44,7 +44,7 @@ function registrerBruker($dblink, $epost, $brukernavn, $passord) {
   $_SESSION['innlogget'] = false;
   // TODO: passord må hashes først
   $sql = "INSERT INTO Bruker (Epost, Brukernavn, Passord) VALUES ('$epost', '$brukernavn', '$passord')";
-  $resultat = mysqli_query($dblink, $sql);
+  mysqli_query($dblink, $sql);
 
   // Søker opp den nye brukeren for å hente BNr
   $sql = "SELECT * FROM bruker WHERE Brukernavn = '$brukernavn' AND Passord = '$passord'";
@@ -52,11 +52,18 @@ function registrerBruker($dblink, $epost, $brukernavn, $passord) {
   $antall = mysqli_num_rows($resultat);
   if ($antall == 1) {
     $rad = mysqli_fetch_assoc($resultat);
-    
+
     $_SESSION['innlogget'] = true;
     $_SESSION['bnr'] = $rad['BNr'];
     $_SESSION['epost'] = $rad['Epost'];
     $_SESSION['brukernavn'] = $rad['Brukernavn'];
+
+
+    // Lager en preferanse-tabell for den nye brukeren
+    $bnr = $rad['BNr'];
+    $sql = "INSERT INTO Preferanser (BNr, Mål, Aktivitetsnivå) VALUES ($bnr, 'Ikke valgt', 'Ingen')";
+    mysqli_query($dblink, $sql);
+
 
     // TODO: Må bruke password_hash og password_verify senere 
     // for å unngå lagring av passord i klartekst.
@@ -183,9 +190,40 @@ function hentStatistikk($dblink, $bnr) {
             "<td>" . $vektløftingAnt . "</td>" .
           "</tr>";
 
-  mysqli_close($dblink); 
+  mysqli_close($dblink);
   return $data; 
-} 
+}
+
+
+
+// Endrer brukerens preferanser
+function endrePreferanser($dblink, $bnr, $mål, $aktivitet) {
+  $sql = "UPDATE Preferanser SET Mål = '$mål', Aktivitetsnivå = '$aktivitet' WHERE BNr = $bnr";
+  $resultat = mysqli_query($dblink, $sql);
+  return $resultat;
+}
+
+
+
+// Henter brukerens preferanser
+function hentPreferanser($dblink, $bnr) { 
+  $sql = "SELECT * FROM Preferanser WHERE BNr = $bnr"; 
+  $resultat = mysqli_query($dblink, $sql); 
+  $data = "";
+  $antall = mysqli_num_rows($resultat);
+  if ($antall == 1) {
+    $rad = mysqli_fetch_assoc($resultat);
+
+    $mål = $rad['Mål'];
+    $aktivitet = $rad['Aktivitetsnivå'];
+
+    $data = "<p class='card-text'>Mål: $mål</p>" .
+            "<p class='card-text'>Aktivitetsnivå: $aktivitet</p>";
+  }
+
+  mysqli_close($dblink);
+  return $data; 
+}
 
 
 

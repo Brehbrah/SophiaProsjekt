@@ -1,6 +1,7 @@
 -- SQL script som oppretter databasetabeller for Sophia prosjektet
 
 -- Slett tabeller hvis de eksisterer fra før
+DROP TABLE IF EXISTS Preferanser;
 DROP TABLE IF EXISTS Treningsøkt;
 DROP TABLE IF EXISTS Bruker;
 
@@ -62,6 +63,21 @@ INSERT INTO Treningsøkt (Dato, BNr, Øvelse, Minutter, Antall) VALUES
 
 
 
+-- Tabellstruktur for Preferanser
+CREATE TABLE IF NOT EXISTS Preferanser (
+  BNr int(5) DEFAULT NULL,
+  Mål varchar(20) NOT NULL,
+  Aktivitetsnivå varchar(20) NOT NULL,
+  PRIMARY KEY (BNr)
+) ENGINE=InnoDB;
+
+
+-- Data for tabell Preferanser
+-- BNr er autonummerert og foreign key (!)
+INSERT INTO Preferanser (BNr, Mål, Aktivitetsnivå) VALUES
+(1, "Få bedre kondisjon", "Stillesittende"),
+(2, "Få bedre kondisjon", "Stillesittende");
+
 
 
 
@@ -70,3 +86,11 @@ INSERT INTO Treningsøkt (Dato, BNr, Øvelse, Minutter, Antall) VALUES
 --
 ALTER TABLE Treningsøkt
   ADD CONSTRAINT TreningsøktBrukerFK FOREIGN KEY (BNr) REFERENCES Bruker (BNr);
+
+
+--
+-- Begrensninger for tabell Preferanser
+--
+ALTER TABLE Preferanser
+  ADD CONSTRAINT PreferanserBrukerFK FOREIGN KEY (BNr) REFERENCES Bruker (BNr);
+

@@ -2,6 +2,7 @@
 session_start();
 include_once "funksjoner.php";
 include_once "database.php";
+include_once "endrepreferanser.php";
 sjekkInnlogging();
 
 $bruker = $_SESSION['brukernavn'];
@@ -15,28 +16,40 @@ topp();
     <a href='#about'>Om oss</a>
   </div>
 
-    <section class="jumbotron text-center">
-      <div class="container-fluid">
-        <h1 class="jumbotron-heading">Hei, <?php echo "$bruker"; ?>!</h1>
-        <p class="lead text-muted">Mitt navn er Sophia, din personlige veileder.</p>
-        <hr class="my-4">
-        <p class="lead text-muted">Her velger du dine mål. Ut fra dette vil jeg beregne en treningsplan du kan følge.</p>
-        <p>
-          <a href="dashboard.php" class="btn btn-secondary my-2">Dashboard</a>
-          <a href="treningsdagbok.php" class="btn btn-secondary my-2">Treningsdagbok</a>
-          <a href="preferanser.php" class="btn btn-primary my-2">Preferanser</a>
-          <a href="treningsplan.php" class="btn btn-secondary my-2">Treningsplan</a>
-        </p>
+  <section class="jumbotron text-center">
+    <div class="container-fluid">
+      <h1 class="jumbotron-heading">Hei, <?php echo "$bruker"; ?>!</h1>
+      <p class="lead text-muted">Mitt navn er Sophia, din personlige veileder.</p>
+      <hr class="my-4">
+      <p class="lead text-muted">Her velger du dine mål. Ut fra dette vil jeg beregne en treningsplan du kan følge.</p>
+      <p>
+        <a href="dashboard.php" class="btn btn-secondary my-2">Dashboard</a>
+        <a href="treningsdagbok.php" class="btn btn-secondary my-2">Treningsdagbok</a>
+        <a href="preferanser.php" class="btn btn-primary my-2">Preferanser</a>
+        <a href="treningsplan.php" class="btn btn-secondary my-2">Treningsplan</a>
+      </p>
+    </div>
+  </section>
+
+
+
+  <div class="container">
+    <div class="card">
+    <h5 class="card-header">Dine preferanser</h5>
+      <div class="card-body" id="valgtePreferanser">
+        <p class="card-text">Mål: Ikke valgt</p>
+        <p class="card-text">Aktivitetsnivå: Ingen</p>
       </div>
-    </section>
+    </div>
+  </div>
 
-
+ 
 
   <div class="container" id="preferanser">
     <form action="preferanser.php" method="post">
       <div class="form-group">
         <label class="bold">Mål</label>
-        <select class="form-control" id="øvelse" name="øvelse" required>
+        <select class="form-control" name="mål" required>
           <option></option>
           <option>Gå ned i vekt</option>
           <option>Få bedre kondisjon</option>
@@ -46,13 +59,13 @@ topp();
       </div>
       <div class="form-group">
         <label class="bold">Hvordan beskriver du din daglige aktivitet?</label><br>
-          <input type="checkbox" name="aktivitet" value="stillesittende"> Stillesittende (f.eks jobber i bank eller på kontor)<br>
-          <input type="checkbox" name="aktivitet" value="littaktiv"> Tilbringer en stor del av dagen på beina (f.eks lærer eller selger)<br>
-          <input type="checkbox" name="aktivitet" value="aktiv"> Bruker en stor del av dagen med fysisk aktivitet (f.eks servitør eller postbud)<br>
-          <input type="checkbox" name="aktivitet" value="sværtaktiv"> Tilbringer mesteparten av dagen med tung fysisk aktivitet (f.eks industriarbeider, snekker)<br>
+          <input type="radio" name="aktivitet" value="Stillesittende"> Stillesittende (f.eks jobber i bank eller på kontor)<br>
+          <input type="radio" name="aktivitet" value="Litt Aktiv"> Tilbringer en stor del av dagen på beina (f.eks lærer eller selger)<br>
+          <input type="radio" name="aktivitet" value="Aktiv"> Bruker en stor del av dagen med fysisk aktivitet (f.eks servitør eller postbud)<br>
+          <input type="radio" name="aktivitet" value="Svært Aktiv"> Tilbringer mesteparten av dagen med tung fysisk aktivitet (f.eks industriarbeider, snekker)<br>
       </div>
       <div class="form-group">
-        <input type="submit" value="Legg til" class="btn btn-primary btn-sm">
+        <input type="submit" value="Lagre preferanser" class="btn btn-primary btn-sm">
       </div>
     </form>
     <div id="display"></div>
