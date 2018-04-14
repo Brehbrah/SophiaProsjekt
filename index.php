@@ -46,8 +46,6 @@ topp();
 				<form class="login-form" action="logginn.php" method="post">
 					<input type="text" class="input" name="brukernavn" autocomplete="off" placeholder="Epost eller Brukernavn" required>
 					<input type="password" class="input" name="passord" autocomplete="off" placeholder="Passord" required>
-					<input type="checkbox" class="checkbox" id="remember_me">
-					<label for="remember_me">Husk meg</label>
 					<input type="submit" class="button" value="Logg inn">
 				</form><!--.login-form-->
 				<div class="help-text">

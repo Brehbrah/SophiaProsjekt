@@ -117,8 +117,8 @@ function hentAlleTreninger($dblink, $bnr) {
               "<tr>" . 
                 "<th>Dato</th>" . 
                 "<th>Øvelse</th>" . 
-                "<th>min</th>" . 
-                "<th>km/øvelser</th>" . 
+                "<th>Minutter</th>" . 
+                "<th>Km/Øvelser</th>" . 
             "</thead>";
 
   while($rad = mysqli_fetch_assoc($svar)) { 
@@ -129,6 +129,59 @@ function hentAlleTreninger($dblink, $bnr) {
                 "<td>" . $rad['Antall'] . "</td>" .
               "</tr>";
   }
+
+  mysqli_close($dblink); 
+  return $data; 
+}
+
+
+// Henter Statistikk over samtlige øvelser til innlogget bruker
+function hentStatistikk($dblink, $bnr) { 
+  $sql = "SELECT * FROM Treningsøkt WHERE BNr = $bnr"; 
+  $svar = mysqli_query($dblink, $sql); 
+  $data = "<table class='table table-sm table-hover' id='displayøvelser'>" . 
+            "<thead class='thead-dark'>" . 
+              "<tr>" . 
+                "<th>Øvelse</th>" . 
+                "<th>Minutter</th>" . 
+                "<th>Km/Øvelser</th>" . 
+            "</thead>";
+
+  $svømmingMin = 0;
+  $svømmingAnt = 0;
+  $løpingMin = 0;
+  $løpingAnt = 0;
+  $vektløftingMin = 0;
+  $vektløftingAnt = 0;
+
+  while($rad = mysqli_fetch_assoc($svar)) { 
+    if ($rad['Øvelse'] == 'Svømming') {
+      $svømmingMin = $svømmingMin + $rad['Minutter'];
+      $svømmingAnt = $svømmingAnt + $rad['Antall'];
+    } elseif ($rad['Øvelse'] == 'Løping') {
+      $løpingMin = $løpingMin + $rad['Minutter'];
+      $løpingAnt = $løpingAnt + $rad['Antall'];
+    } elseif ($rad['Øvelse'] == 'Vektløfting') {
+      $vektløftingMin = $vektløftingMin + $rad['Minutter'];
+      $vektløftingAnt = $vektløftingAnt + $rad['Antall'];
+    }
+  }
+
+  $data .= "<tr class='table-success'>" .
+            "<td>" . "Svømming" . "</td>" .
+            "<td>" . $svømmingMin . "</td>" .
+            "<td>" . $svømmingAnt . "</td>" .
+          "</tr>" .
+          "<tr class='table-success'>" .
+            "<td>" . "Løping" . "</td>" .
+            "<td>" . $løpingMin . "</td>" .
+            "<td>" . $løpingAnt . "</td>" .
+          "</tr>" .
+          "<tr class='table-success'>" .
+            "<td>" . "Vektløfting" . "</td>" .
+            "<td>" . $vektløftingMin . "</td>" .
+            "<td>" . $vektløftingAnt . "</td>" .
+          "</tr>";
 
   mysqli_close($dblink); 
   return $data; 

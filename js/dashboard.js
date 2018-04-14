@@ -1,11 +1,21 @@
 $(document).ready(function(e) {
 
+  // Henter brukerens treningsinnlegg fra databasen
   $("#visAlleBtn").click(function() {
     function visAlleTreninger(data) {
       $("#displayAlle").html(data);
     }
 
     $.post("hentdata.php", visAlleTreninger, "text");
+  });
+
+  // Henter statistikk over brukerens treningsinnlegg
+  $("#visStatBtn").click(function() {
+    function visStat(data) {
+      $("#displayStat").html(data);
+    }
+
+    $.post("hentstat.php", visStat, "text");
   });
 
   $("#dato").change(function() {

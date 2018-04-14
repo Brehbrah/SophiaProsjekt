@@ -32,13 +32,22 @@ topp();
 
     <section class="text-center">
         <p>
-          <a class="btn btn-info btn" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" id="visAlleBtn">
+          <a class="btn btn-info btn" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapseExample" id="visAlleBtn">
             Se mine treningsinnlegg
           </a>
         </p>
-        <div class="collapse" id="collapseExample">
+        <div class="collapse" id="collapse1">
           <div class="card card-body" id="displayAlle">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+          </div>
+        </div>
+
+        <p>
+          <a class="btn btn-info btn" data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapseExample" id="visStatBtn">
+            Min trenings-statistikk
+          </a>
+        </p>
+        <div class="collapse" id="collapse2">
+          <div class="card card-body" id="displayStat">
           </div>
         </div>
     </section>
