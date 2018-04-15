@@ -21,16 +21,20 @@ function lukk($dblink) {
 function gyldigBruker($dblink, $brukernavn, $passord) {
   $ok = false;
   $_SESSION['innlogget'] = false;
-  $sql = "SELECT * FROM bruker WHERE Brukernavn = '$brukernavn' AND Passord = '$passord'";
-  $resultat = mysqli_query($dblink, $sql);
-  $antall = mysqli_num_rows($resultat);
-  if ($antall == 1) {
-    $rad = mysqli_fetch_assoc($resultat);
+
+
+  // prepared statement
+  $stmt = $dblink->prepare("SELECT * FROM bruker WHERE Brukernavn = ? AND Passord = ?");
+  $stmt->bind_param("ss", $brukernavn, $passord);
+  $stmt->execute();
+  $stmt->bind_result($bnr, $epost, $navn, $pass);
+
+  if ($stmt->fetch()) {
 
     $_SESSION['innlogget'] = true;
-    $_SESSION['bnr'] = $rad['BNr'];
-    $_SESSION['epost'] = $rad['Epost'];
-    $_SESSION['brukernavn'] = $rad['Brukernavn'];
+    $_SESSION['bnr'] = $bnr;
+    $_SESSION['epost'] = $epost;
+    $_SESSION['brukernavn'] = $navn;
 
     // TODO: Må bruke password_hash og password_verify senere 
     // for å unngå lagring av passord i klartekst.
