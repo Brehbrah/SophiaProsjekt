@@ -50,7 +50,7 @@ topp();
                 <h2>Beskrivelse: <span id="comment"></span> </h2> 
               </td>
             </tr>
-       </table>   
+       </table>
     </div>
 
 
@@ -59,4 +59,6 @@ topp();
 		<p> © Sophia | Email: support@sophia.no | Telephone: 4444 4444 </p>
 	</footer>
 	
-<?php bunn(); ?>
+<?php 
+bunn(); 
+?>

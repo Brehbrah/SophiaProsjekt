@@ -19,8 +19,8 @@ CREATE TABLE IF NOT EXISTS Bruker (
 -- Data for tabell Bruker
 -- BNr er autonummerert (!)
 INSERT INTO Bruker (Epost, Brukernavn, Passord) VALUES
-('vidaraarvik@gmail.com', 'vidaraarvik', 'test'),
-('ola@gmail.com', 'ola', 'passord');
+('admin@admin.com', 'admin', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
+('ola@gmail.com', 'ola', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.');
 
 
 
