@@ -1,5 +1,6 @@
 <?php
 include_once "db/globals.php";
+$dblink = kobleOpp();
 
 // Etablerer forbindelse til databasen
 function kobleOpp() {
@@ -20,6 +21,36 @@ function lukk($dblink) {
 function gyldigBruker($dblink, $brukernavn, $passord) {
   $ok = false;
   $_SESSION['innlogget'] = false;
+
+
+  // prepared statement
+  $stmt = $dblink->prepare("SELECT * FROM bruker WHERE Brukernavn = ? AND Passord = ?");
+  $stmt->bind_param("ss", $brukernavn, $passord);
+  $stmt->execute();
+  $stmt->bind_result($bnr, $epost, $navn, $pass);
+
+  if ($stmt->fetch()) {
+
+    $_SESSION['innlogget'] = true;
+    $_SESSION['bnr'] = $bnr;
+    $_SESSION['epost'] = $epost;
+    $_SESSION['brukernavn'] = $navn;
+
+    // TODO: Må bruke password_hash og password_verify senere 
+    // for å unngå lagring av passord i klartekst.
+    $ok = true;
+  }
+  return $ok;
+}
+
+function registrerBruker($dblink, $epost, $brukernavn, $passord) {
+  $ok = false;
+  $_SESSION['innlogget'] = false;
+  // TODO: passord må hashes først
+  $sql = "INSERT INTO Bruker (Epost, Brukernavn, Passord) VALUES ('$epost', '$brukernavn', '$passord')";
+  mysqli_query($dblink, $sql);
+
+  // Søker opp den nye brukeren for å hente BNr
   $sql = "SELECT * FROM bruker WHERE Brukernavn = '$brukernavn' AND Passord = '$passord'";
   $resultat = mysqli_query($dblink, $sql);
   $antall = mysqli_num_rows($resultat);
@@ -31,7 +62,14 @@ function gyldigBruker($dblink, $brukernavn, $passord) {
     $_SESSION['epost'] = $rad['Epost'];
     $_SESSION['brukernavn'] = $rad['Brukernavn'];
 
-    // Må bruke password_hash og password_verify senere 
+
+    // Lager en preferanse-tabell for den nye brukeren
+    $bnr = $rad['BNr'];
+    $sql = "INSERT INTO Preferanser (BNr, Mål, Aktivitetsnivå) VALUES ($bnr, 'Ikke valgt', 'Ingen')";
+    mysqli_query($dblink, $sql);
+
+
+    // TODO: Må bruke password_hash og password_verify senere 
     // for å unngå lagring av passord i klartekst.
     $ok = true;
   }
@@ -54,50 +92,144 @@ function leggTilØvelse($dblink, $bnr, $dato, $øvelse, $tid, $antall) {
   return $resultat;
 }
 
-// Henter ut varer med navn som inneholder søketeksten
-function hentVarer($dblink, $varenavn) {
-  $sql = "SELECT * FROM Vare " .
-         "WHERE Betegnelse LIKE '%" . $varenavn . "%' " .
-         "ORDER BY Betegnelse;";
-  return mysqli_query($dblink, $sql);
+// Henter samtlige øvelser på gitt dato til innlogget bruker
+function hentTreninger($dblink, $bnr, $dato) { 
+  $sql = "SELECT * FROM Treningsøkt WHERE BNr = $bnr AND Dato = '$dato'"; 
+  $svar = mysqli_query($dblink, $sql); 
+  $data = "<table class='table table-sm table-hover' id='displayøvelser'>" . 
+            "<thead class='thead-dark'>" . 
+              "<tr>" . 
+                "<th>Dato</th>" . 
+                "<th>Øvelse</th>" . 
+                "<th>min</th>" . 
+                "<th>km/øvelser</th>" . 
+            "</thead>";
+
+  while($rad = mysqli_fetch_assoc($svar)) { 
+    $data .= "<tr class='table-success'>" .
+                "<td>" . $rad['Dato'] . "</td>" .
+                "<td>" . $rad['Øvelse'] . "</td>" .
+                "<td>" . $rad['Minutter'] . "</td>" .
+                "<td>" . $rad['Antall'] . "</td>" .
+              "</tr>";
+  }
+
+  mysqli_close($dblink); 
+  return $data; 
 }
 
-// Henter en vare med gitt varekode
-function hentVare($dblink, $varekode) {
-  $sql = "SELECT * FROM Vare " .
-         "WHERE Varekode='" . $varekode . "';";
+
+// Henter samtlige øvelser til innlogget bruker
+function hentAlleTreninger($dblink, $bnr) { 
+  $sql = "SELECT * FROM Treningsøkt WHERE BNr = $bnr"; 
+  $svar = mysqli_query($dblink, $sql); 
+  $data = "<table class='table table-sm table-hover' id='displayøvelser'>" . 
+            "<thead class='thead-dark'>" . 
+              "<tr>" . 
+                "<th>Dato</th>" . 
+                "<th>Øvelse</th>" . 
+                "<th>Minutter</th>" . 
+                "<th>Km/Øvelser</th>" . 
+            "</thead>";
+
+  while($rad = mysqli_fetch_assoc($svar)) { 
+    $data .= "<tr class='table-success'>" .
+                "<td>" . $rad['Dato'] . "</td>" .
+                "<td>" . $rad['Øvelse'] . "</td>" .
+                "<td>" . $rad['Minutter'] . "</td>" .
+                "<td>" . $rad['Antall'] . "</td>" .
+              "</tr>";
+  }
+
+  mysqli_close($dblink); 
+  return $data; 
+}
+
+
+// Henter Statistikk over samtlige øvelser til innlogget bruker
+function hentStatistikk($dblink, $bnr) { 
+  $sql = "SELECT * FROM Treningsøkt WHERE BNr = $bnr"; 
+  $svar = mysqli_query($dblink, $sql); 
+  $data = "<table class='table table-sm table-hover' id='displayøvelser'>" . 
+            "<thead class='thead-dark'>" . 
+              "<tr>" . 
+                "<th>Øvelse</th>" . 
+                "<th>Minutter</th>" . 
+                "<th>Km/Øvelser</th>" . 
+            "</thead>";
+
+  $svømmingMin = 0;
+  $svømmingAnt = 0;
+  $løpingMin = 0;
+  $løpingAnt = 0;
+  $vektløftingMin = 0;
+  $vektløftingAnt = 0;
+
+  while($rad = mysqli_fetch_assoc($svar)) { 
+    if ($rad['Øvelse'] == 'Svømming') {
+      $svømmingMin = $svømmingMin + $rad['Minutter'];
+      $svømmingAnt = $svømmingAnt + $rad['Antall'];
+    } elseif ($rad['Øvelse'] == 'Løping') {
+      $løpingMin = $løpingMin + $rad['Minutter'];
+      $løpingAnt = $løpingAnt + $rad['Antall'];
+    } elseif ($rad['Øvelse'] == 'Vektløfting') {
+      $vektløftingMin = $vektløftingMin + $rad['Minutter'];
+      $vektløftingAnt = $vektløftingAnt + $rad['Antall'];
+    }
+  }
+
+  $data .= "<tr class='table-success'>" .
+            "<td>" . "Svømming" . "</td>" .
+            "<td>" . $svømmingMin . "</td>" .
+            "<td>" . $svømmingAnt . "</td>" .
+          "</tr>" .
+          "<tr class='table-success'>" .
+            "<td>" . "Løping" . "</td>" .
+            "<td>" . $løpingMin . "</td>" .
+            "<td>" . $løpingAnt . "</td>" .
+          "</tr>" .
+          "<tr class='table-success'>" .
+            "<td>" . "Vektløfting" . "</td>" .
+            "<td>" . $vektløftingMin . "</td>" .
+            "<td>" . $vektløftingAnt . "</td>" .
+          "</tr>";
+
+  mysqli_close($dblink);
+  return $data; 
+}
+
+
+
+// Endrer brukerens preferanser
+function endrePreferanser($dblink, $bnr, $mål, $aktivitet) {
+  $sql = "UPDATE Preferanser SET Mål = '$mål', Aktivitetsnivå = '$aktivitet' WHERE BNr = $bnr";
   $resultat = mysqli_query($dblink, $sql);
-  $varerad = mysqli_fetch_array($resultat, MYSQL_ASSOC);
-  return $varerad;
+  return $resultat;
 }
 
-// Henter de mest solgte varene
-function hentBestselgere($dblink, $n) {
-  $sql = "SELECT OL.*,  SUM(OL.Antall*OL.PrisPrEnhet) AS SamletSalg, V.Betegnelse " .
-         "FROM Ordrelinje AS OL, Vare AS V " .
-         "WHERE OL.Varekode = V.Varekode " .
-         "GROUP BY OL.Varekode " .
-         "ORDER BY SUM(OL.Antall*OL.PrisPrEnhet) DESC " .
-         "LIMIT $n";
-  return mysqli_query($dblink, $sql);
+
+
+// Henter brukerens preferanser
+function hentPreferanser($dblink, $bnr) { 
+  $sql = "SELECT * FROM Preferanser WHERE BNr = $bnr"; 
+  $resultat = mysqli_query($dblink, $sql); 
+  $data = "";
+  $antall = mysqli_num_rows($resultat);
+  if ($antall == 1) {
+    $rad = mysqli_fetch_assoc($resultat);
+
+    $mål = $rad['Mål'];
+    $aktivitet = $rad['Aktivitetsnivå'];
+
+    $data = "<p class='card-text'>Mål: $mål</p>" .
+            "<p class='card-text'>Aktivitetsnivå: $aktivitet</p>";
+  }
+
+  mysqli_close($dblink);
+  return $data; 
 }
 
-// Sett inn rad i tabell med autonummerert primærnøkkel,
-// og returner primærnøkkelverdien.
-function settInn($dblink, $sql) {
-  $ok = mysqli_query($dblink, $sql);
-  if (!$ok)
-    die('<p>Feil i SQL: ' . $sql . ' - ' . mysqli_error($dblink) . '</p>');
-  return mysqli_insert_id($dblink);
-}
 
-// Utfør SQL-spørring og returner første rad.
-function hentForsteRad($dblink, $sql) { 
-  $resultat = mysqli_query($dblink, $sql);
-  if (!$resultat)
-    die('<p>Feil i SQL: ' . $sql . ' - ' . mysqli_error($dblink) . '</p>');
-  $rad = mysqli_fetch_assoc($resultat);
-  return $rad;
-}
+
 
 ?>

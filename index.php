@@ -1,19 +1,14 @@
 <?php
 session_start();
 include_once "funksjoner.php";
-include_once "database.php";
-
-
-
-include_once "logginn.php";
 
 topp();
 ?>
 
 	<div class="topnav">
-		  <a class="active" href="index.php">Home</a>
-		  <a href="contact.php">Contact</a>
-		  <a href="about.php">About</a>
+		  <a class="active" href="index.php">Hjem</a>
+		  <a href="contact.php">Kontakt</a>
+		  <a href="about.php">Om oss</a>
 	</div>
 
 	<div class = "split left">
@@ -28,24 +23,25 @@ topp();
 		    <div class = "box">
 		    	<div class="form-wrap">
 		<div class="tabs">
-			<h3 class="signup-tab"><a class="active" href="#signup-tab-content">Sign Up</a></h3>
-			<h3 class="login-tab"><a href="#login-tab-content">Login</a></h3>
+			<h3 class="signup-tab"><a class="active" href="#signup-tab-content">Registrer</a></h3>
+			<h3 class="login-tab"><a href="#login-tab-content">Logg inn</a></h3>
 		</div><!--.tabs-->
 
 		<div class="tabs-content">
 			<div id="signup-tab-content" class="active">
-				<form class="signup-form" action="" method="post">
-					<input type="email" class="input" id="signup_email" autocomplete="off" placeholder="Email">
-					<input type="text" class="input" id="signup_name" autocomplete="off" placeholder="Username">
-					<input type="password" class="input" id="signup_pass" autocomplete="off" placeholder="Password">
-					<input type="submit" class="button" value="Sign Up">
-				</form><!--.login-form-->
+				<form class="signup-form" action="registrer.php" method="post">
+					<input type="email" class="input" name="signup_epost" autocomplete="off" placeholder="Epost" required>
+					<input type="text" class="input" name="signup_brukernavn" autocomplete="off" placeholder="Brukernavn" required>
+					<input type="password" class="input" name="signup_passord" autocomplete="off" placeholder="Passord" required>
+					<input type="submit" class="button" value="Registrer">
+				</form><!--.signup-form-->
 				<div class="help-text">
 
 				</div><!--.help-text-->
 			</div><!--.signup-tab-content-->
 
 			<div id="login-tab-content">
+<<<<<<< HEAD
 				<form class="login-form" action="" method="post">
 					<input type="text" class="input" name="brukernavn" autocomplete="off" placeholder="Email or Username">
 					<input type="password" class="input" name="passord" autocomplete="off" placeholder="Password" style=" border: 1px solid #CFCFCF;">
@@ -55,6 +51,15 @@ topp();
 				</div><!--.login-form-->
 				<div class="help-text">
 					<p><a href="#">Forgot your password?</a></p>
+=======
+				<form class="login-form" action="logginn.php" method="post">
+					<input type="text" class="input" name="brukernavn" autocomplete="off" placeholder="Epost eller Brukernavn" required>
+					<input type="password" class="input" name="passord" autocomplete="off" placeholder="Passord" required>
+					<input type="submit" class="button" value="Logg inn">
+				</form><!--.login-form-->
+				<div class="help-text">
+					<p><a href="#">Glemt ditt passord?</a></p>
+>>>>>>> bd7229eb3300d2bd8c3447254596d9a98308af93
 				</div><!--.help-text-->
 			</div><!--.login-tab-content-->
 			
@@ -65,10 +70,9 @@ topp();
 		</div>
 		
 		<footer>
-			<p> © Sophia | Email: support@sophia.no | Telephone: 4444 4444 </p>
+			<p> © Sophia | Epost: support@sophia.no | Telefon: 4444 4444 </p>
 		</footer>
 
 <?php 
-lukk($dblink);
 bunn(); 
 ?>

@@ -10,6 +10,7 @@ function topp() {
 			<link rel='stylesheet' type = 'text/css' href='css/style.css'>
 			<link rel='stylesheet' type = 'text/css' href='css/dashboard.css'>
 			<script src='js/jquery-3.3.1.min.js'></script>
+			<script src='js/bootstrap.min.js'></script>
 			<script src='js/login.js'></script>
 			<script src='js/dashboard.js'></script>
 			<meta name='viewport' content='width=device-width, initial-scale=1'>

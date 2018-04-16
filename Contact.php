@@ -11,9 +11,9 @@ topp();
 ?>
 
 	<div class="topnav">
-		  <a href="index.php">Home</a>
-		  <a class="active" href="contact.php">Contact</a>
-		  <a href="about.php">About</a>
+		  <a href="index.php">Hjem</a>
+		  <a class="active" href="contact.php">Kontakt</a>
+		  <a href="about.php">Om oss</a>
 	</div>
 
 <body>
