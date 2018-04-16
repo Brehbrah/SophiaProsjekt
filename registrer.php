@@ -16,7 +16,7 @@ if (isset($_POST["signup_epost"]) && isset($_POST["signup_brukernavn"]) && isset
     header("Location: dashboard.php");
   }
   else {
-    $melding .= "<p>Feil brukernavn/passord!</p>";
+    $melding .= "<p>Feil ved registrering av bruker</p>";
   }
 
 }

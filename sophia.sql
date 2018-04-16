@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS Bruker (
   BNr int(5) NOT NULL AUTO_INCREMENT,
   Epost varchar(40) UNIQUE NOT NULL,
   Brukernavn varchar(20) NOT NULL,
-  Passord varchar(20) DEFAULT NULL,
+  Passord varchar(255) DEFAULT NULL,
   PRIMARY KEY (BNr)
 ) ENGINE=InnoDB;
 

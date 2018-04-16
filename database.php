@@ -22,22 +22,19 @@ function gyldigBruker($dblink, $brukernavn, $passord) {
   $ok = false;
   $_SESSION['innlogget'] = false;
 
-
   // prepared statement
-  $stmt = $dblink->prepare("SELECT * FROM bruker WHERE Brukernavn = ? AND Passord = ?");
-  $stmt->bind_param("ss", $brukernavn, $passord);
+  $stmt = $dblink->prepare("SELECT * FROM bruker WHERE Brukernavn = ?");
+  $stmt->bind_param("s", $brukernavn);
   $stmt->execute();
-  $stmt->bind_result($bnr, $epost, $navn, $pass);
+  $stmt->bind_result($bnr, $epost, $navn, $dbpass);
 
-  if ($stmt->fetch()) {
+  if ($stmt->fetch() && password_verify($passord, $dbpass)) {
 
     $_SESSION['innlogget'] = true;
     $_SESSION['bnr'] = $bnr;
     $_SESSION['epost'] = $epost;
     $_SESSION['brukernavn'] = $navn;
 
-    // TODO: Må bruke password_hash og password_verify senere 
-    // for å unngå lagring av passord i klartekst.
     $ok = true;
   }
   return $ok;
@@ -46,18 +43,14 @@ function gyldigBruker($dblink, $brukernavn, $passord) {
 function registrerBruker($dblink, $epost, $brukernavn, $passord) {
   $ok = false;
   $_SESSION['innlogget'] = false;
-  // TODO: passord må hashes først
-
+  // Passord hashes først
+  $hashed_password = password_hash($passord, PASSWORD_DEFAULT);
 
   // prepared statement
   $stmt = $dblink->prepare("INSERT INTO Bruker (Epost, Brukernavn, Passord) VALUES (?, ?, ?)");
-  $stmt->bind_param("sss", $epost, $brukernavn, $passord);
+  $stmt->bind_param("sss", $epost, $brukernavn, $hashed_password);
   $stmt->execute();
 
-
-
-    // TODO: Må bruke password_hash og password_verify senere 
-    // for å unngå lagring av passord i klartekst.
 
   return gyldigBruker($dblink, $brukernavn, $passord);
 }
