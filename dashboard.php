@@ -10,16 +10,10 @@ topp();
 ?>
 
 	<div class='topnav'>
-<<<<<<< HEAD
-		<a href='index.php'>Home</a>
-		<!-- <a href='#news'>Login</a> -->
-		  <a href="contact.php">Contact</a>
-		  <a href="about.php">About</a>
-=======
+
 		<a href='loggut.php'>Logg ut</a>
-		<a href='#contact'>Kontakt</a>
-		<a href='#about'>Om oss</a>
->>>>>>> bd7229eb3300d2bd8c3447254596d9a98308af93
+		<a href='Contact.php'>Kontakt</a>
+		<a href='About.php'>Om oss</a>
 	</div>
 
     <section class="jumbotron text-center">

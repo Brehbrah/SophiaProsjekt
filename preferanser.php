@@ -70,5 +70,10 @@ topp();
     </form>
     <div id="display"></div>
   </div>
-
+ <br><br> 
+		<footer>
+			<p> © Sophia | Email: support@sophia.no | Telephone: 4444 4444 </p>
+		</footer>
+  
+  
 <?php bunn(); ?>

@@ -26,7 +26,7 @@ topp();
 			<h3 class="signup-tab"><a class="active" href="#signup-tab-content">Registrer</a></h3>
 			<h3 class="login-tab"><a href="#login-tab-content">Logg inn</a></h3>
 		</div><!--.tabs-->
-
+		
 		<div class="tabs-content">
 			<div id="signup-tab-content" class="active">
 				<form class="signup-form" action="registrer.php" method="post">
@@ -41,33 +41,25 @@ topp();
 			</div><!--.signup-tab-content-->
 
 			<div id="login-tab-content">
-<<<<<<< HEAD
-				<form class="login-form" action="" method="post">
-					<input type="text" class="input" name="brukernavn" autocomplete="off" placeholder="Email or Username">
-					<input type="password" class="input" name="passord" autocomplete="off" placeholder="Password" style=" border: 1px solid #CFCFCF;">
-					 <hr style="height: 29px; visibility:hidden;" />
-					<input type="submit" class="button" value="Login">
-					</form>
-				</div><!--.login-form-->
-				<div class="help-text">
-					<p><a href="#">Forgot your password?</a></p>
-=======
+
 				<form class="login-form" action="logginn.php" method="post">
 					<input type="text" class="input" name="brukernavn" autocomplete="off" placeholder="Epost eller Brukernavn" required>
 					<input type="password" class="input" name="passord" autocomplete="off" placeholder="Passord" required>
 					<input type="submit" class="button" value="Logg inn">
-				</form><!--.login-form-->
+					<hr style="height: 0px; visibility:hidden;" />
+				</form>
 				<div class="help-text">
 					<p><a href="#">Glemt ditt passord?</a></p>
->>>>>>> bd7229eb3300d2bd8c3447254596d9a98308af93
-				</div><!--.help-text-->
-			</div><!--.login-tab-content-->
+				</div>
+		</div> 
 			
 
 		</div><!--.tabs-content-->
 	</div><!--.form-wrap-->
 		    </div>
 		</div>
+		</div>
+
 		
 		<footer>
 			<p> © Sophia | Epost: support@sophia.no | Telefon: 4444 4444 </p>

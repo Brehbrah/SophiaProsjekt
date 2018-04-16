@@ -9,20 +9,13 @@ $bruker = $_SESSION['brukernavn'];
 topp();
 ?>
 
-<<<<<<< HEAD:kostogtrening.php
-	<div class='topnav'>
-		<a href='index.php'>Home</a>
-		<!-- <a href='#news'>Login</a> -->
-		  <a href="contact.php">Contact</a>
-		  <a href="about.php">About</a>
-	</div>
-=======
+
   <div class='topnav'>
     <a href='loggut.php'>Logg ut</a>
-    <a href='#contact'>Kontakt</a>
-    <a href='#about'>Om oss</a>
+		<a href='Contact.php'>Kontakt</a>
+		<a href='About.php'>Om oss</a>
   </div>
->>>>>>> bd7229eb3300d2bd8c3447254596d9a98308af93:treningsplan.php
+
 
     <section class="jumbotron text-center">
       <div class="container-fluid">

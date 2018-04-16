@@ -8,6 +8,9 @@ include_once "database.php";
 include_once "logginn.php";
 
 topp();
+
+
+
 ?>
 
 	<div class="topnav">
@@ -21,24 +24,11 @@ topp();
 	<br>
 		<h1>Contact Form</h1>
 		
-		<div class="container">
-  <form action="action_page.php">
+		<div class="container" >
+		
+		
+		
 
-    <label for="firstname">First Name</label>
-    <input type="text" id="firstname" name="firstname" placeholder="Your name..">
-
-    <label for="lastname">Last Name</label>
-    <input type="text" id="lastname" name="lastname" placeholder="Your last name..">
-	
-	<label for="epost">E-post</label>
-    <input type="text" id="epost" name="epost" placeholder="Your E-post">
-
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-    <input type="submit" value="Submit">
-
-  </form>
 </div>
 		
 	</main>
