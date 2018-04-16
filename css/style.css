@@ -170,7 +170,7 @@ body {
 
 main {
 	width: 1204px;
-	height: 890px;
+	height: 790px;
 	background-color: #fffaf4;
 	margin: auto;
 	text-align: center;
@@ -233,5 +233,17 @@ input[type=submit]:hover {
 .container {
     border-radius: 5px;
     padding: 20px;
-	width: 600px;
+	width: 70%;
+	margin: auto;
+}
+
+.col-lg-10 {
+	margin: auto;
+	text-align: center;
+	width: 100%;
+}
+
+.col-md-6{
+	margin: auto;
+	width: 100%;
 }
