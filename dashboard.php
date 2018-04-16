@@ -9,17 +9,24 @@
   <title>Bootstrap</title>
 </head>
   <body>
-    <nav class="navbar bg-dark navbar-dark navbar-expand-sm">
-      <div class ="container">
-        <a class ="navbar-brand d-none d-sm-inline-block"> 
-           <a class="navbar-brand" href="dashboard.php">Sophie Prosjekt</a>
-        </a>
-            <a class ="nav-item nav link" href=loggut.php>Logg ut</a>
-        </a>
-      </div>
-    </nav>
+
+
+  <nav class="navbar bg-dark navbar-dark navbar-expand-sm">
+    <div class="container">
+      <a class="navbar-brand d-none d-sm-inline-block"> 
+        <!--<img src="images/wisdompetlogo.svg" style="width: 40px;" alt="Wisdom Pet Logo"-->
+      </a>
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="dashboard.php">Home</a>
+            <a class="nav-item nav-link" href="treningsdagbok.php" >Treningsdagbok</a>
+            <a class="nav-item nav-link" href="preferanser.php" href="">Preferanser</a>
+            <a class="nav-item nav-link" href="treningsplan.php" href="">Treningsplan</a>
+            <a class="nav-item nav-link" href=loggut.php>Logg ut</a>
+        </div>
+  </div>
+</nav>
   
-  <div class="container">
+
 
 <?php
 session_start();
@@ -31,7 +38,7 @@ $bruker = $_SESSION['brukernavn'];
 
 topp();
 ?>
-
+  
     <section class="jumbotron text-center">
       <div class="container-fluid">
         <h1 class="jumbotron-heading">Hei, <?php echo "$bruker"; ?>!</h1>
@@ -42,6 +49,7 @@ topp();
           <a href="treningsdagbok.php" class="btn btn-secondary my-2">Treningsdagbok</a>
           <a href="preferanser.php" class="btn btn-secondary my-2">Preferanser</a>
           <a href="treningsplan.php" class="btn btn-secondary my-2">Treningsplan</a>
+          <a href="vektKalkulator.php" class="btn btn-secondary my-2">BMI/Kalori Kalkulator</a>
         </p>
       </div>
     </section>
@@ -75,7 +83,7 @@ topp();
 	
 <?php bunn(); ?>
 
-  </div><!-- content container -->
+ 
 
   <script src="js/jquery.slim.min.js"></script>
   <script src="js/popper.min.js"></script>
