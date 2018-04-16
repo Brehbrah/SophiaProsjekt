@@ -36,21 +36,19 @@ topp();
 					<input type="submit" class="button" value="Registrer">
 				</form><!--.signup-form-->
 				<div class="help-text">
-
 				</div><!--.help-text-->
 			</div><!--.signup-tab-content-->
 
-			<div id="login-tab-content">
-
-				<form class="login-form" action="logginn.php" method="post">
-					<input type="text" class="input" name="brukernavn" autocomplete="off" placeholder="Epost eller Brukernavn" required>
-					<input type="password" class="input" name="passord" autocomplete="off" placeholder="Passord" required>
-					<input type="submit" class="button" value="Logg inn">
-					<hr style="height: 0px; visibility:hidden;" />
-				</form>
-				<div class="help-text">
-					<p><a href="#">Glemt ditt passord?</a></p>
-				</div>
+		<div id="login-tab-content">
+			<form class="login-form" action="logginn.php" method="post">
+				<input type="text" class="input" name="brukernavn" autocomplete="off" placeholder="Epost eller Brukernavn" required>
+				<input type="password" class="input" name="passord" autocomplete="off" placeholder="Passord" required>
+				<input type="submit" class="button" value="Logg inn">
+				<hr style="height: 0px; visibility:hidden;" />
+			</form>
+			<div class="help-text">
+				<p><a href="#">Glemt ditt passord?</a></p>
+			</div>
 		</div> 
 			
 
