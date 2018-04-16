@@ -13,8 +13,8 @@ topp();
 	<div class='topnav'>
 		<a href='index.php'>Home</a>
 		<!-- <a href='#news'>Login</a> -->
-		<a href='#contact'>Contact</a>
-		<a href='#about'>About</a>
+		  <a href="contact.php">Contact</a>
+		  <a href="about.php">About</a>
 	</div>
 
 	<section class="jumbotron text-center">
@@ -62,8 +62,12 @@ topp();
 		</form>
 		<div id="treningsdata"></div>
 	</div>
-
-
+<br>
+<br>
+<br>
+		<footer>
+			<p> © Sophia | Email: support@sophia.no | Telephone: 4444 4444 </p>
+		</footer>
 <?php 
 lukk($dblink);
 bunn(); 

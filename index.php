@@ -41,22 +41,20 @@ topp();
 					<input type="submit" class="button" value="Sign Up">
 				</form><!--.login-form-->
 				<div class="help-text">
-					<br>
-					<br>
-					<br>
+
 				</div><!--.help-text-->
 			</div><!--.signup-tab-content-->
 
 			<div id="login-tab-content">
 				<form class="login-form" action="" method="post">
 					<input type="text" class="input" name="brukernavn" autocomplete="off" placeholder="Email or Username">
-					<input type="password" class="input" name="passord" autocomplete="off" placeholder="Password">
-					<input type="checkbox" class="checkbox" id="remember_me">
-					<label for="remember_me">Remember me</label>
+					<input type="password" class="input" name="passord" autocomplete="off" placeholder="Password" style=" border: 1px solid #CFCFCF;">
+					 <hr style="height: 29px; visibility:hidden;" />
 					<input type="submit" class="button" value="Login">
-				</form><!--.login-form-->
+					</form>
+				</div><!--.login-form-->
 				<div class="help-text">
-					<p><a href="#">Forget your password?</a></p>
+					<p><a href="#">Forgot your password?</a></p>
 				</div><!--.help-text-->
 			</div><!--.login-tab-content-->
 			

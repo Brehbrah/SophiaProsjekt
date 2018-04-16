@@ -100,7 +100,8 @@ body {
     .form-wrap .tabs-content .active {
       display: block !important; 
     }
-  .form-wrap form .input {
+	
+.input {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     color: inherit;
@@ -178,7 +179,7 @@ main {
 footer {
 	background-color: #444444;
 	width: 100%;
-	height: 80px;
+	height: 70px;
 	position: fixed;
 	margin: auto;
 	right: 0;
