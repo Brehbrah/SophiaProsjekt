@@ -8,6 +8,12 @@ $bruker = $_SESSION['brukernavn'];
 
 topp();
 ?>
+
+  <div class='topnav'>
+      <a href='loggut.php'>Logg ut</a>
+      <a href='#contact'>Kontakt</a>
+      <a href='#about'>Om oss</a>
+  </div>
   
     <section class="jumbotron text-center">
       <div class="container-fluid">
