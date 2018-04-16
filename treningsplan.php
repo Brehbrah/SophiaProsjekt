@@ -28,6 +28,7 @@ topp();
           <a href="treningsdagbok.php" class="btn btn-secondary my-2">Treningsdagbok</a>
           <a href="preferanser.php" class="btn btn-secondary my-2">Preferanser</a>
           <a href="treningsplan.php" class="btn btn-primary my-2">Treningsplan</a>
+          <a href="vektKalkulator.php" class="btn btn-secondary my-2">BMI/Kalori Kalkulator</a>
         </p>
       </div>
     </section>

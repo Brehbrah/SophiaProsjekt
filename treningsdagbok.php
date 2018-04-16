@@ -1,39 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-	  <meta charset="UTF-8">
-	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	  <meta http-equiv="x-ua-compatible" content="ie=edge">
-	  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <title>Bootstrap</title>
-</head>
-	<body>
-		<nav class="navbar bg-dark navbar-dark navbar-expand-sm">
-			<div class ="container">
-				<a class ="navbar-brand d-none d-sm-inline-block"> 
-					<div class ="navbar-nav">
-						<a class="nav-item nav-link active">Dashboard</a>
-					</div>
-					<a href='loggut.php'>Logg ut</a>
-					<a href='Contact.php'>Kontakt</a>
-					<a href='About.php'>Om oss</a>
-				</a>
-			</div>
-		</nav>
-	<div class="container">
+<?php
+session_start();
+include_once "funksjoner.php";
+include_once "database.php";
+include_once "leggtil.php";
+sjekkInnlogging();
 
-		<?php
-		session_start();
-		include_once "funksjoner.php";
-		include_once "database.php";
-		include_once "leggtil.php";
-		sjekkInnlogging();
+$bruker = $_SESSION['brukernavn'];
 
-		$bruker = $_SESSION['brukernavn'];
-
-		topp();
-		?>
+topp();
+?>
 
 	<section class="jumbotron text-center">
 	  <div class="container-fluid">
@@ -46,6 +21,7 @@
 	      <a href="treningsdagbok.php" class="btn btn-primary my-2">Treningsdagbok</a>
 	      <a href="preferanser.php" class="btn btn-secondary my-2">Preferanser</a>
 	      <a href="treningsplan.php" class="btn btn-secondary my-2">Treningsplan</a>
+	      <a href="vektKalkulator.php" class="btn btn-secondary my-2">BMI/Kalori Kalkulator</a>
 	    </p>
 	  </div>
 	</section>
@@ -91,15 +67,3 @@
 lukk($dblink);
 bunn(); 
 ?>
-
-	
-
-	</div><!-- content container -->
-
-	<script src="js/jquery.slim.min.js"></script>
-	<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-</body>
-</html>
-
-

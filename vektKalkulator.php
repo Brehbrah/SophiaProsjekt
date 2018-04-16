@@ -1,10 +1,10 @@
 <?php
-
+session_start();
 include_once "funksjoner.php";
 include_once "database.php";
 sjekkInnlogging();
 
-
+$bruker = $_SESSION['brukernavn'];
 
 ?>
 
