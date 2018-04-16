@@ -1,3 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  <title>Bootstrap</title>
+</head>
+  <body>
+
+
+  <nav class="navbar bg-dark navbar-dark navbar-expand-sm">
+    <div class="container">
+      <a class="navbar-brand d-none d-sm-inline-block"> 
+        <!--<img src="images/wisdompetlogo.svg" style="width: 40px;" alt="Wisdom Pet Logo"-->
+      </a>
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="dashboard.php">Home</a>
+            <a class="nav-item nav-link" href="treningsdagbok.php" >Treningsdagbok</a>
+            <a class="nav-item nav-link" href="preferanser.php" href="">Preferanser</a>
+            <a class="nav-item nav-link" href="treningsplan.php" href="">Treningsplan</a>
+            <a class="nav-item nav-link" href=loggut.php>Logg ut</a>
+        </div>
+  </div>
+</nav>
+  
+
+
 <?php
 session_start();
 include_once "funksjoner.php";
@@ -8,13 +38,7 @@ $bruker = $_SESSION['brukernavn'];
 
 topp();
 ?>
-
-	<div class='topnav'>
-		<a href='loggut.php'>Logg ut</a>
-		<a href='Contact.php'>Kontakt</a>
-		<a href='About.php'>Om oss</a>
-	</div>
-
+  
     <section class="jumbotron text-center">
       <div class="container-fluid">
         <h1 class="jumbotron-heading">Hei, <?php echo "$bruker"; ?>!</h1>
@@ -22,10 +46,10 @@ topp();
         <hr class="my-4">
         <p class="lead text-muted">Velkommen til ditt dashboard, hva vil du gjøre nå?</p>
         <p>
-          <a href="dashboard.php" class="btn btn-primary my-2">Dashboard</a>
           <a href="treningsdagbok.php" class="btn btn-secondary my-2">Treningsdagbok</a>
           <a href="preferanser.php" class="btn btn-secondary my-2">Preferanser</a>
           <a href="treningsplan.php" class="btn btn-secondary my-2">Treningsplan</a>
+          <a href="vektKalkulator.php" class="btn btn-secondary my-2">BMI/Kalori Kalkulator</a>
         </p>
       </div>
     </section>
@@ -58,3 +82,11 @@ topp();
 	
 	
 <?php bunn(); ?>
+
+ 
+
+  <script src="js/jquery.slim.min.js"></script>
+  <script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

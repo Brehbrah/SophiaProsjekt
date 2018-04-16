@@ -1,22 +1,39 @@
-<?php
-session_start();
-include_once "funksjoner.php";
-include_once "database.php";
-include_once "leggtil.php";
-sjekkInnlogging();
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <meta charset="UTF-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  <meta http-equiv="x-ua-compatible" content="ie=edge">
+	  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <title>Bootstrap</title>
+</head>
+	<body>
+		<nav class="navbar bg-dark navbar-dark navbar-expand-sm">
+			<div class ="container">
+				<a class ="navbar-brand d-none d-sm-inline-block"> 
+					<div class ="navbar-nav">
+						<a class="nav-item nav-link active">Dashboard</a>
+					</div>
+					<a href='loggut.php'>Logg ut</a>
+					<a href='Contact.php'>Kontakt</a>
+					<a href='About.php'>Om oss</a>
+				</a>
+			</div>
+		</nav>
+	<div class="container">
 
-$bruker = $_SESSION['brukernavn'];
+		<?php
+		session_start();
+		include_once "funksjoner.php";
+		include_once "database.php";
+		include_once "leggtil.php";
+		sjekkInnlogging();
 
-topp();
-?>
+		$bruker = $_SESSION['brukernavn'];
 
-	<div class='topnav'>
-
-		<a href='loggut.php'>Logg ut</a>
-		<a href='Contact.php'>Kontakt</a>
-		<a href='About.php'>Om oss</a>
-
-	</div>
+		topp();
+		?>
 
 	<section class="jumbotron text-center">
 	  <div class="container-fluid">
@@ -74,3 +91,15 @@ topp();
 lukk($dblink);
 bunn(); 
 ?>
+
+	
+
+	</div><!-- content container -->
+
+	<script src="js/jquery.slim.min.js"></script>
+	<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+
+

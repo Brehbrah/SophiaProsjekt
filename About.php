@@ -4,6 +4,9 @@ include_once "funksjoner.php";
 include_once "database.php";
 
 
+
+include_once "logginn.php";
+
 topp();
 ?>
 
