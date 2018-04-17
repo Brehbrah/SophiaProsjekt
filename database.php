@@ -208,6 +208,31 @@ function hentPreferanser($dblink, $bnr) {
   return $data; 
 }
 
+function topTrening($dblink){
+  $sql = "SELECT * FROM Treningsøkt ORDER BY 'Antall' DESC LIMIT 10";
+  $svar = mysqli_query($dblink, $sql);
+  $data = "<table class='table table-sm table-hover' id='displayøvelser'>" . 
+            "<thead class='thead-dark'>" . 
+              "<tr>" . 
+                "<th>BNr</th>" . 
+                "<th>Øvelse</th>" . 
+                "<th>min</th>" . 
+                "<th>km/øvelser</th>" . 
+            "</thead>";
+
+  while($rad = mysqli_fetch_assoc($svar)) { 
+    $data .= "<tr class='table-success'>" .
+                "<td>" . $rad['BNr'] . "</td>" .
+                "<td>" . $rad['Øvelse'] . "</td>" .
+                "<td>" . $rad['Minutter'] . "</td>" .
+                "<td>" . $rad['Antall'] . "</td>" .
+              "</tr>";
+  }
+
+  mysqli_close($dblink); 
+  echo $data; 
+}
+
 
 
 

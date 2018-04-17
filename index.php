@@ -58,6 +58,13 @@ topp();
 		</div>
 		</div>
 
+		<div>
+		<?php
+		include_once "database.php";
+		topTrening(kobleOpp());
+		?>
+		</div>
+
 		
 		<footer>
 			<p> © Sophia | Epost: support@sophia.no | Telefon: 4444 4444 </p>
