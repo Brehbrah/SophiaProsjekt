@@ -10,6 +10,8 @@ DROP TRIGGER IF EXISTS ny_bruker_registrert;
 
 -- Slett lagrede rutiner hvis de eksisterer fra før
 DROP PROCEDURE IF EXISTS NyTreningsøkt;
+DROP PROCEDURE IF EXISTS NyBruker;
+
 
 
 
@@ -44,6 +46,22 @@ CREATE TABLE IF NOT EXISTS Treningsøkt (
   PRIMARY KEY (ØktNr)
 ) ENGINE=InnoDB;
 
+
+
+
+-- Lagret rutine som oppretter en ny Bruker
+DELIMITER $$
+CREATE PROCEDURE NyBruker
+(
+  IN b_epost    varchar(40),
+  IN b_navn     varchar(20),
+  IN b_passord  varchar(255)
+)
+BEGIN
+  INSERT INTO Bruker (Epost, Brukernavn, Passord) 
+  VALUES (b_epost, b_navn, b_passord);
+END$$
+DELIMITER ;
 
 
 
