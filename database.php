@@ -209,7 +209,7 @@ function hentPreferanser($dblink, $bnr) {
 }
 
 function topTrening($dblink){
-  $sql = "SELECT bruker.Brukernavn, treningsøkt.BNr, SUM(Minutter) FROM Treningsøkt INNER JOIN bruker on treningsøkt.BNr=bruker.BNr GROUP BY BNr ORDER BY 'Antall' DESC LIMIT 10";
+  $sql = "SELECT bruker.Brukernavn, treningsøkt.BNr, SUM(Minutter) FROM Treningsøkt INNER JOIN bruker on treningsøkt.BNr=bruker.BNr GROUP BY BNr ORDER BY SUM(Minutter) DESC LIMIT 10";
   $svar = mysqli_query($dblink, $sql);
   $data = "<table class='table table-striped table-dark'>" . 
             "<thead>" . 
