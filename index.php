@@ -14,7 +14,7 @@ topp();
 	</div>
 	
 
-
+	<div class="Container">
 		<div class = "split-left">
 		<div class = "center">
 			<img src = "img/SophiaFront.png" alt = "Sophia">
@@ -59,6 +59,7 @@ topp();
 		</div>
 
 		</div>
+	</div>
 		<br>
 		<br>
 		<div class="topMeny" style="margin-top: 500px;">
