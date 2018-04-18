@@ -47,7 +47,7 @@ function registrerBruker($dblink, $epost, $brukernavn, $passord) {
   $hashed_password = password_hash($passord, PASSWORD_DEFAULT);
 
   // prepared statement
-  $stmt = $dblink->prepare("INSERT INTO Bruker (Epost, Brukernavn, Passord) VALUES (?, ?, ?)");
+  $stmt = $dblink->prepare("CALL NyBruker(?, ?, ?)");
   $stmt->bind_param("sss", $epost, $brukernavn, $hashed_password);
   $stmt->execute();
 
