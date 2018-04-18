@@ -4,6 +4,8 @@
 DROP TABLE IF EXISTS Preferanser;
 DROP TABLE IF EXISTS Treningsøkt;
 DROP TABLE IF EXISTS Bruker;
+-- Slett triggere hvis de eksisterer fra før
+DROP TRIGGER IF EXISTS ny_bruker_registrert;
 
 
 
@@ -15,6 +17,49 @@ CREATE TABLE IF NOT EXISTS Bruker (
   Passord varchar(255) DEFAULT NULL,
   PRIMARY KEY (BNr)
 ) ENGINE=InnoDB;
+
+
+-- Tabellstruktur for Preferanser
+CREATE TABLE IF NOT EXISTS Preferanser (
+  BNr int(5) DEFAULT NULL,
+  Mål varchar(20) NOT NULL,
+  Aktivitetsnivå varchar(20) NOT NULL,
+  PRIMARY KEY (BNr)
+) ENGINE=InnoDB;
+
+
+
+-- Tabellstruktur for Treningsøkt
+CREATE TABLE IF NOT EXISTS Treningsøkt (
+  ØktNr int(10) NOT NULL AUTO_INCREMENT,
+  Dato date NOT NULL,
+  BNr int(5) DEFAULT NULL,
+  Øvelse varchar(20) NOT NULL,
+  Minutter int(5) NOT NULL,
+  Antall int(5) NOT NULL,
+  PRIMARY KEY (ØktNr)
+) ENGINE=InnoDB;
+
+
+
+
+
+DELIMITER $$
+
+CREATE TRIGGER ny_bruker_registrert
+AFTER INSERT ON bruker
+FOR EACH ROW
+BEGIN
+  INSERT INTO Preferanser (BNr, Mål, Aktivitetsnivå)
+  VALUES (new.BNr, 'Ikke valgt', 'Ikke valgt');
+END$$
+
+DELIMITER ;
+
+
+
+
+
 
 -- Data for tabell Bruker
 -- BNr er autonummerert (!)
@@ -31,21 +76,6 @@ INSERT INTO Bruker (Epost, Brukernavn, Passord) VALUES
 ('ida@gmail.com', 'Ida', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.');
 
 
-
-
-
-
-
--- Tabellstruktur for Treningsøkt
-CREATE TABLE IF NOT EXISTS Treningsøkt (
-  ØktNr int(10) NOT NULL AUTO_INCREMENT,
-  Dato date NOT NULL,
-  BNr int(5) DEFAULT NULL,
-  Øvelse varchar(20) NOT NULL,
-  Minutter int(5) NOT NULL,
-  Antall int(5) NOT NULL,
-  PRIMARY KEY (ØktNr)
-) ENGINE=InnoDB;
 
 
 -- Data for tabell Treningsøkt
@@ -102,21 +132,6 @@ INSERT INTO Treningsøkt (Dato, BNr, Øvelse, Minutter, Antall) VALUES
 ('2018-04-23', 1, 'Svømming', 30, 4);
 
 
-
--- Tabellstruktur for Preferanser
-CREATE TABLE IF NOT EXISTS Preferanser (
-  BNr int(5) DEFAULT NULL,
-  Mål varchar(20) NOT NULL,
-  Aktivitetsnivå varchar(20) NOT NULL,
-  PRIMARY KEY (BNr)
-) ENGINE=InnoDB;
-
-
--- Data for tabell Preferanser
--- BNr er autonummerert og foreign key (!)
-INSERT INTO Preferanser (BNr, Mål, Aktivitetsnivå) VALUES
-(1, "Få bedre kondisjon", "Stillesittende"),
-(2, "Få bedre kondisjon", "Stillesittende");
 
 
 
