@@ -4,8 +4,12 @@
 DROP TABLE IF EXISTS Preferanser;
 DROP TABLE IF EXISTS Treningsøkt;
 DROP TABLE IF EXISTS Bruker;
+
 -- Slett triggere hvis de eksisterer fra før
 DROP TRIGGER IF EXISTS ny_bruker_registrert;
+
+-- Slett lagrede rutiner hvis de eksisterer fra før
+DROP PROCEDURE IF EXISTS NyTreningsøkt;
 
 
 
@@ -43,9 +47,27 @@ CREATE TABLE IF NOT EXISTS Treningsøkt (
 
 
 
-
+-- Lagret rutine som oppretter en ny Treningsøkt
 DELIMITER $$
+CREATE PROCEDURE NyTreningsøkt
+(
+  IN t_dato   date,
+  IN t_bnr    int(5),
+  IN t_øvelse varchar(20),
+  IN t_min    int(5),
+  IN t_ant    int(5)
+)
+BEGIN
+  INSERT INTO Treningsøkt (Dato, BNr, Øvelse, Minutter, Antall)
+  VALUES (t_dato, t_bnr, t_øvelse, t_min, t_ant);
+END$$
+DELIMITER ;
 
+
+
+
+-- Trigger som oppretter preferanser for ny bruker
+DELIMITER $$
 CREATE TRIGGER ny_bruker_registrert
 AFTER INSERT ON bruker
 FOR EACH ROW
@@ -53,7 +75,6 @@ BEGIN
   INSERT INTO Preferanser (BNr, Mål, Aktivitetsnivå)
   VALUES (new.BNr, 'Ikke valgt', 'Ikke valgt');
 END$$
-
 DELIMITER ;
 
 
@@ -67,7 +88,7 @@ INSERT INTO Bruker (Epost, Brukernavn, Passord) VALUES
 ('admin@admin.com', 'admin', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
 ('arne@gmail.com', 'Arne', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
 ('bjørn@gmail.com', 'Bjørn', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
-('cathrine@gmail.com', 'cathrine', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
+('cathrine@gmail.com', 'Cathrine', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
 ('daniel@gmail.com', 'Daniel', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
 ('erik@gmail.com', 'Erik', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
 ('frida@gmail.com', 'Frida', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
@@ -148,4 +169,7 @@ ALTER TABLE Treningsøkt
 --
 ALTER TABLE Preferanser
   ADD CONSTRAINT PreferanserBrukerFK FOREIGN KEY (BNr) REFERENCES Bruker (BNr);
+
+
+
 

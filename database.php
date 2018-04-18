@@ -64,9 +64,9 @@ function sjekkInnlogging() {
   }
 }
 
-// Legger til en ny øvelse i databasen (treningsdagbok)
-function leggTilØvelse($dblink, $bnr, $dato, $øvelse, $tid, $antall) {
-  $sql = "INSERT INTO Treningsøkt (Dato, BNr, Øvelse, Minutter, Antall) VALUES ('$dato', $bnr, '$øvelse', $tid, $antall)";
+// Legger til en ny Treningsøkt i databasen (treningsdagbok)
+function nyTreningsøkt($dblink, $bnr, $dato, $øvelse, $tid, $antall) {
+  $sql = "CALL NyTreningsøkt('$dato', $bnr, '$øvelse', $tid, $antall)";
   $resultat = mysqli_query($dblink, $sql);
   return $resultat;
 }

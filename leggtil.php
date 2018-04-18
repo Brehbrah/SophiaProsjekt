@@ -10,7 +10,7 @@ if (isset($_POST["tid"]) && isset($_POST["antall"])) {
   $tid = $_POST["tid"];
   $antall = $_POST["antall"];
 
-  $ok = leggTilØvelse($dblink, $bnr, $dato, $øvelse, $tid, $antall);
+  $ok = nyTreningsøkt($dblink, $bnr, $dato, $øvelse, $tid, $antall);
 
   if ($ok) {
     $melding .= "Øvelse lagt til!";
