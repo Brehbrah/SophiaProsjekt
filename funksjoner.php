@@ -24,16 +24,5 @@ function bunn() {
 		</html>";
 }
 
-function bmi ($bmi) {
-	if ($bmi <  18.5) {
-		echo "<p>Undervekt</p>";
-	} else if (bmi < 25) {
-		echo "<p>Normal</p>";
-	} else if (bmi < 30) {
-		echo "<p>Overvektig</p>";
-	} else {
-		echo "<p>Overfedme</p>";
-	}
-}
 
 ?>

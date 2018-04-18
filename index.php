@@ -12,9 +12,8 @@ topp();
 	  <a href="contact.php">Kontakt</a>
 	  <a href="about.php">Om oss</a>
 	</div>
+	
 
-	<div class="container">
-		<section = 
 
 		<div class = "split left">
 		<div class = "center">
@@ -51,27 +50,30 @@ topp();
 						<input type="submit" class="button" value="Logg inn">
 						<hr style="height: 0px; visibility:hidden;" />
 					</form>
+
 				</div> 
 			</div><!--.tabs-content-->
 				</div><!--.form-wrap-->
+
 		    </div>
 		</div>
-		</div>
 
-		<div>
+		</div>
+		<div class="topMeny" style="margin-top: 500px;">
 			<?php
 			topTrening(kobleOpp());
 			?>
 		</div>
+			
 		
-	</div>
-
 	
 
 		
 		<footer>
 			<p> © Sophia | Epost: support@sophia.no | Telefon: 4444 4444 </p>
 		</footer>
+
+		
 
 <?php 
 bunn(); 
