@@ -10,17 +10,19 @@ topp();
 ?>
 
 
-    <div class='topnav'>
-        <a href='loggut.php'>Logg ut</a>
-        <a href='#contact'>Kontakt</a>
-        <a href='#about'>Om oss</a>
-    </div>
+  <div class='topnav'>
+    <a href='loggut.php'>Logg ut</a>
+    <a href='Contact.php'>Kontakt</a>
+    <a href='About.php'>Om oss</a>
+  </div>
+
 
     <section class="jumbotron text-center">
       <div class="container-fluid">
         <h1 class="jumbotron-heading">Hei, <?php echo "$bruker"; ?>!</h1>
-        <p class="lead text-muted">Ønsker du å finne ut hva din BMI eller kalori inntak skal være?.</p>
+        <p class="lead text-muted">Her kan du finne hva din BMI (Body Mass Index) er</p>
         <hr class="my-4">
+        <p class="lead text-muted">Skriv inn din høyde og vekt</p>
         <p>
           <a href="dashboard.php" class="btn btn-secondary my-2">Dashboard</a>
           <a href="treningsdagbok.php" class="btn btn-secondary my-2">Treningsdagbok</a>
