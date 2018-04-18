@@ -12,8 +12,8 @@ topp();
 
 	<div class='topnav'>
 	    <a href='loggut.php'>Logg ut</a>
-	    <a href='#contact'>Kontakt</a>
-	    <a href='#about'>Om oss</a>
+	    <a href='contact.php'>Kontakt</a>
+	    <a href='about.php'>Om oss</a>
 	</div>
 
 	<section class="jumbotron text-center">

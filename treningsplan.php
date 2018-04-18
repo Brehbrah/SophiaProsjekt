@@ -12,8 +12,8 @@ topp();
 
   <div class='topnav'>
     <a href='loggut.php'>Logg ut</a>
-		<a href='Contact.php'>Kontakt</a>
-		<a href='About.php'>Om oss</a>
+		<a href='contact.php'>Kontakt</a>
+		<a href='about.php'>Om oss</a>
   </div>
 
 
