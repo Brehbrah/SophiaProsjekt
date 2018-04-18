@@ -50,8 +50,6 @@ topp();
 				<p><a href="#">Glemt ditt passord?</a></p>
 			</div>
 		</div> 
-			
-
 		</div><!--.tabs-content-->
 	</div><!--.form-wrap-->
 		    </div>
