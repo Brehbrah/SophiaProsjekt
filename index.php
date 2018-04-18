@@ -14,7 +14,7 @@ topp();
 	</div>
 	
 
-	<div class="Container">
+	<div class="Container2">
 		<div class = "split-left">
 		<div class = "center">
 			<img src = "img/SophiaFront.png" alt = "Sophia">
