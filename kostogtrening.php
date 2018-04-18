@@ -5,10 +5,10 @@ topp();
 ?>
 
 	<div class='topnav'>
-		<a href='index.php'>Home</a>
+		<a href='index.php'>Hjem</a>
 		<!-- <a href='#news'>Login</a> -->
-		<a href='#contact'>Contact</a>
-		<a href='#about'>About</a>
+		<a href='#contact'>Kontakt</a>
+		<a href='#about'>Om oss</a>
 	</div>
 
     <section class="jumbotron text-center">

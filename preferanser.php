@@ -73,7 +73,7 @@ topp();
   </div>
   
 	<footer>
-		<p> © Sophia | Email: support@sophia.no | Telephone: 4444 4444 </p>
+		<p> © Sophia | Email: support@sophia.no | Telefon: 4444 4444 </p>
 	</footer>
   
   

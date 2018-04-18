@@ -22,7 +22,7 @@ topp();
 <body>
 	<main>
 	<br>
-		<h1>Contact Form</h1>
+		<h1>Kontakt skjema</h1>
 		<div class="container" >
 		<p>Har du noen spørsmål, eller diskusjons tema du vi ta opp, så legg inn en e-post og send den til meg. Jeg skal prøve å svare på den så fort som mulig. </p>
 		<div class="form">

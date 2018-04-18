@@ -11,14 +11,14 @@ topp();
 ?>
 
 	<div class="topnav">
-		  <a href="index.php">Home</a>
-		  <a href="contact.php">Contact</a>
-		  <a class="active "href="about.php">About</a>
+		  <a href="index.php">Hjem</a>
+		  <a href="contact.php">Kontakt</a>
+		  <a class="active "href="about.php">Om oss</a>
 	</div>
 <body>
 	<main>
 		<br>
-		<h1>About Us</h1>
+		<h1>Om oss</h1>
 		<br>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula risus et arcu suscipit, vulputate semper nisl venenatis. Donec volutpat sapien augue, pharetra pharetra nisl interdum ac. Proin congue nisi ullamcorper nisl tincidunt ultrices. 
 		Mauris in scelerisque sem. 
@@ -31,7 +31,7 @@ topp();
 	</main>
 	
 	<footer>
-		<p> © Sophia | Email: support@sophia.no | Telephone: 4444 4444 </p>
+		<p> © Sophia | Email: support@sophia.no | Telefon: 4444 4444 </p>
 	</footer>
 </body>
 
