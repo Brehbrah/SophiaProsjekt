@@ -10,20 +10,58 @@ navBar("about");
 
 <body>
 	<main>
-		<br>
-		<h1>Om oss</h1>
-		<br>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula risus et arcu suscipit, vulputate semper nisl venenatis. Donec volutpat sapien augue, pharetra pharetra nisl interdum ac. Proin congue nisi ullamcorper nisl tincidunt ultrices. 
-		Mauris in scelerisque sem. 
-		Integer sed eleifend lectus, 
-		sed fringilla justo.</p>
-		<p>Donec accumsan vestibulum dui, quis vehicula risus pharetra vel. Donec lorem felis, blandit id varius et, gravida sed ipsum. Cras aliquam mauris ligula, in tempor urna consectetur eu. Nam justo libero, dapibus at diam vitae, volutpat faucibus sapien. Suspendisse efficitur accumsan lectus vel finibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed ac posuere ligula, ac egestas tellus. Maecenas molestie tristique congue. Donec condimentum condimentum nibh condimentum vestibulum. Integer in purus accumsan, maximus sapien commodo, 
-		hendrerit erat. 
-		Aenean posuere viverra ex, 
-		non dapibus augue fermentum quis.</p>
+		<div class="container">
+          <h1 class="jumbotron-heading">Sophia</h1>
+          <p class="lead text-muted">Hei formålet med denne nettsiden er å gi mulighet til brukeren å følge med på treningsaktiviteten sin. Her kan brukeren også få en tilretelagt treningsplann.</p>
+          <p class="lead text-muted">Dette er en eksamens oppgave for vår 2018 i fra universitetet i sørøst Norge</p>
+          <p>
+            <a href="https://www.usn.no/" class="btn btn-primary my-2" style="width: 150px;">usn.no</a>
+            <a href="https://aktivtrening.com/" class="btn btn-secondary my-2" style="width: 150px;">aktivtrening.com</a>
+          </p>
+        </div>
+
+		<div class="row" style=" margin-top: 20px;">
+        <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
+          <img class="rounded-circle" src="img/Qasim.jpg" alt="Qasim" width="140" height="140">
+          <h2>Qasim Iyas Abdi</h2>
+          <p>Jeg er bare en som ønsker å gjøre treningsplanen til brukerene våre enklere.</p>
+        	<p>Kasim300@hotmail.com</p>
+         <p><button class="alfa">Contact</button></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
+          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <h2>Heading</h2>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        	<p>example@example.com</p>
+         <p><button class="alfa">Contact</button></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
+          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <h2>Heading</h2>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        	<p>example@example.com</p>
+          <p><button class="alfa">Contact</button></p></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
+          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <h2>Heading</h2>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        	<p>example@example.com</p>
+          <p><button class="alfa">Contact</button></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
+          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <h2>Heading</h2>
+         	<p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        	<p>example@example.com</p>
+          <p><button class="alfa">Contact</button></p>
+        </div><!-- /.col-lg-4 -->
+      </div>
 	</main>
 	
-
+	<footer>
+		<p> © Sophia | Email: support@sophia.no | Telefon: 4444 4444 </p>
+	</footer>
 </body>
 
 <?php 
