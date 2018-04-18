@@ -209,19 +209,19 @@ function hentPreferanser($dblink, $bnr) {
 }
 
 function topTrening($dblink){
-  $sql = "SELECT  BNr, SUM(Minutter) FROM Treningsøkt GROUP BY BNr ORDER BY 'Antall' DESC LIMIT 10";
+  $sql = "SELECT bruker.Brukernavn, treningsøkt.BNr, SUM(Minutter) FROM Treningsøkt INNER JOIN bruker on treningsøkt.BNr=bruker.BNr GROUP BY BNr ORDER BY 'Antall' DESC LIMIT 10";
   $svar = mysqli_query($dblink, $sql);
   $data = "<table class='table table-sm table-hover' id='displayøvelser'>" . 
             "<thead class='thead-dark'>" . 
               "<tr>" . 
+                "<th>Brukernavn</th>" . 
                 "<th>BNr</th>" . 
-               
                 "<th>min</th>" . 
-                 
             "</thead>";
 
   while($rad = mysqli_fetch_assoc($svar)) { 
     $data .= "<tr class='table-success'>" .
+                "<td>" . $rad['Brukernavn'] . "</td>" .
                 "<td>" . $rad['BNr'] . "</td>" .
                 "<td>" . $rad['SUM(Minutter)'] . "</td>" .
                
