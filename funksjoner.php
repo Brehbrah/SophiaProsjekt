@@ -36,12 +36,11 @@ function navBarDash() {
 }
 
 
-
-
-
-
-
+// Lager menyen som finnes på brukerens dashboard-sider
 function menyDashboard($valgt, $tekst, $bruker) {
+	$primary = "btn btn-primary";
+	$secondary = "btn btn-secondary";
+
 	echo "<section class='jumbotron text-center'>
 		      <div class='container-fluid'>
 		        <h1 class='jumbotron-heading'>Hei, $bruker!</h1>
@@ -51,37 +50,37 @@ function menyDashboard($valgt, $tekst, $bruker) {
 		        <p>
 		          <a href='dashboard.php' class='";
 		          if ($valgt == "dashboard")
-		          	getPrimary();
+		          	echo "$primary";
 		          else
-		          	getSecondary();
+		          	echo "$secondary";
 
 		          echo "'>Dashboard</a>
 		          <a href='treningsdagbok.php' class='";
 		          if ($valgt == "treningsdagbok")
-		          	getPrimary();
+		          	echo "$primary";
 		          else
-		          	getSecondary();
+		          	echo "$secondary";
 
 		          echo "'>Treningsdagbok</a>
 		          <a href='preferanser.php' class='";
 		          if ($valgt == "preferanser")
-		          	getPrimary();
+		          	echo "$primary";
 		          else
-		          	getSecondary();
+		          	echo "$secondary";
 
 		          echo "'>Preferanser</a>
 		          <a href='treningsplan.php' class='";
 		          if ($valgt == "treningsplan")
-		          	getPrimary();
+		          	echo "$primary";
 		          else
-		          	getSecondary();
+		          	echo "$secondary";
 
 		          echo "'>Treningsplan</a>
 		          <a href='vektKalkulator.php' class='";
 		          if ($valgt == "bmi")
-		          	getPrimary();
+		          	echo "$primary";
 		          else
-		          	getSecondary();
+		          	echo "$secondary";
 
 		          echo "'>BMI/Kalori Kalkulator</a>
 		        </p>
@@ -89,14 +88,6 @@ function menyDashboard($valgt, $tekst, $bruker) {
 		    </section>";
 }
 
-
-function getPrimary() {
-	echo "btn btn-primary";
-}
-
-function getSecondary() {
-	echo "btn btn-secondary";
-}
 
 
 
