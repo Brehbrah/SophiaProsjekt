@@ -3,14 +3,7 @@ session_start();
 include_once "funksjoner.php";
 include_once "database.php";
 
-
-
-include_once "logginn.php";
-
 topp();
-
-
-
 ?>
 
 	<div class="topnav">
