@@ -10,15 +10,15 @@ navBar("about");
 
 <body>
 	<main>
-		<div class="container">
+		  <div class="container">
           <h1 class="jumbotron-heading">Sophia</h1>
-          <p class="lead text-muted">Hei formålet med denne nettsiden er å gi mulighet til brukeren å følge med på treningsaktiviteten sin. Her kan brukeren også få en tilretelagt treningsplann.</p>
-          <p class="lead text-muted">Dette er en eksamens oppgave for vår 2018 i fra universitetet i sørøst Norge</p>
+          <p class="lead text-muted">Formålet med denne applikasjonen er å gi brukeren oversikt over treningsaktiviteten sin. Sophia kan også gi brukeren en tilrettelagt treningsplan.</p>
+          <p class="lead text-muted">Dette er en eksamensoppgave for våren 2018 under universitetet i Sørøst-Norge, Bø i Telemark</p>
           <p>
             <a href="https://www.usn.no/" class="btn btn-primary my-2" style="width: 150px;">usn.no</a>
             <a href="https://aktivtrening.com/" class="btn btn-secondary my-2" style="width: 150px;">aktivtrening.com</a>
           </p>
-        </div>
+      </div>
 
 		<div class="row" style=" margin-top: 20px;">
         <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
@@ -59,9 +59,6 @@ navBar("about");
       </div>
 	</main>
 	
-	<footer>
-		<p> © Sophia | Email: support@sophia.no | Telefon: 4444 4444 </p>
-	</footer>
 </body>
 
 <?php 
