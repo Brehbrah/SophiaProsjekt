@@ -43,9 +43,8 @@ menyDashboard("treningsdagbok", "Dette er din treningsdagbok - her legger du inn
 		<div id="display"></div>
 	</div>
 
-	<footer>
-		<p> © Sophia | Email: support@sophia.no | Telefon: 4444 4444 </p>
-	</footer>
+
+
 <?php 
 lukk($dblink);
 bunn(); 

@@ -23,9 +23,7 @@ navBar("about");
 		non dapibus augue fermentum quis.</p>
 	</main>
 	
-	<footer>
-		<p> © Sophia | Email: support@sophia.no | Telefon: 4444 4444 </p>
-	</footer>
+
 </body>
 
 <?php 

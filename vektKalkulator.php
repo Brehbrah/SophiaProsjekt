@@ -35,9 +35,6 @@ menyDashboard("bmi", "Her kan du regne ut din BMI basert på høyde og vekt.", $
 
 
 
-	<footer>
-		<p> © Sophia | Email: support@sophia.no | Telefon: 4444 4444 </p>
-	</footer>
 	
 <?php 
 bunn(); 

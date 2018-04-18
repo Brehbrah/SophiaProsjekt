@@ -59,15 +59,6 @@ navBar("index");
 			topTrening(kobleOpp());
 			?>
 		</div>
-			
-		
-	
-
-		
-		<footer>
-			<p> © Sophia | Epost: support@sophia.no | Telefon: 4444 4444 </p>
-		</footer>
-
 		
 
 <?php 

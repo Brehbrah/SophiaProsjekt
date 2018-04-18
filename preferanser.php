@@ -50,9 +50,7 @@ menyDashboard("preferanser", "Her velger du dine mål. Ut fra dette vil jeg bere
     <div id="display"></div>
   </div>
   
-	<footer>
-		<p> © Sophia | Email: support@sophia.no | Telefon: 4444 4444 </p>
-	</footer>
+
   
   
 <?php bunn(); ?>

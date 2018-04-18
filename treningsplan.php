@@ -12,7 +12,8 @@ menyDashboard("treningsplan", "Når du har lagt inn dine preferanser vil jeg lag
 ?>
 
 
-		<footer>
-			<p> © Sophia | Email: support@sophia.no | Telefon: 4444 4444 </p>
-		</footer>
+
+
+
+
 <?php bunn(); ?>

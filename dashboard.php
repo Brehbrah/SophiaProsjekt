@@ -32,10 +32,6 @@ menyDashboard("dashboard", "Velkommen til ditt dashboard, hva vil du gjøre nå?
           </div>
         </div>
     </section>
-    
-		<footer>
-			<p> © Sophia | Email: support@sophia.no | Telefon: 4444 4444 </p>
-		</footer>
 	
 	
 <?php bunn(); ?>

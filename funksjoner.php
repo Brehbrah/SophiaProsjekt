@@ -20,8 +20,17 @@ function topp() {
 
 // Legger til lik bunn på alle websider
 function bunn() {
+	footer();
 	echo "</body>
 		</html>";
+}
+
+
+// Legger til footer
+function footer() {
+	echo "<footer>
+			<p> © Sophia | Epost: support@sophia.no | Telefon: 54 45 32 23 </p>
+		  </footer>";
 }
 
 

@@ -23,17 +23,9 @@ navBar("contact");
 			<input type="text" style="height:150px" name="comment" size="50"><br><br>
 			<input type="submit" value="Send">
 			</form>
-	</div>
-		
-		
-
-</div>
-		
+		</div>
+		</div>
 	</main>
-	
-	<footer>
-		<p> © Sophia | Email: support@sophia.no | Telephone: 4444 4444 </p>
-	</footer>
 </body>
 
 <?php 
