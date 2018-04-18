@@ -16,8 +16,14 @@ DROP TABLE IF EXISTS Bruker;
 DROP TRIGGER IF EXISTS ny_bruker_registrert;
 
 -- Slett lagrede rutiner hvis de eksisterer fra før
-DROP PROCEDURE IF EXISTS NyTreningsøkt;
 DROP PROCEDURE IF EXISTS NyBruker;
+DROP PROCEDURE IF EXISTS HentBruker;
+DROP PROCEDURE IF EXISTS NyTreningsøkt;
+DROP PROCEDURE IF EXISTS AlleTreningsøkter;
+DROP PROCEDURE IF EXISTS DatoTreningsøkter;
+DROP PROCEDURE IF EXISTS EndrePreferanser;
+DROP PROCEDURE IF EXISTS HentPreferanser;
+DROP PROCEDURE IF EXISTS HentTopp10;
 
 
 
