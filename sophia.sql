@@ -1,5 +1,12 @@
--- SQL script som oppretter databasetabeller for Sophia prosjektet
+-- ############ SQL script for Sophia prosjektet, ############
+-- ############ kjøres lokalt på xampp database.  ############
 
+
+
+
+--
+--  ############ DROP * IF EXISTS ############
+--
 -- Slett tabeller hvis de eksisterer fra før
 DROP TABLE IF EXISTS Preferanser;
 DROP TABLE IF EXISTS Treningsøkt;
@@ -15,6 +22,13 @@ DROP PROCEDURE IF EXISTS NyBruker;
 
 
 
+
+
+
+
+--
+--  ############ Tabellstrukturer ############
+--
 -- Tabellstruktur for Bruker
 CREATE TABLE IF NOT EXISTS Bruker (
   BNr int(5) NOT NULL AUTO_INCREMENT,
@@ -49,7 +63,15 @@ CREATE TABLE IF NOT EXISTS Treningsøkt (
 
 
 
--- Lagret rutine som oppretter en ny Bruker
+
+
+
+
+
+--
+--  ############ Lagrede Rutiner ############
+--
+-- Rutine som oppretter en ny Bruker
 DELIMITER $$
 CREATE PROCEDURE NyBruker
 (
@@ -64,8 +86,19 @@ END$$
 DELIMITER ;
 
 
+-- Rutine som henter data til gitt Brukernavn
+DELIMITER $$
+CREATE PROCEDURE HentBruker
+(
+  IN b_navn     varchar(20)
+)
+BEGIN
+  SELECT * FROM bruker WHERE Brukernavn = b_navn;
+END$$
+DELIMITER ;
 
--- Lagret rutine som oppretter en ny Treningsøkt
+
+-- Rutine som oppretter en ny Treningsøkt
 DELIMITER $$
 CREATE PROCEDURE NyTreningsøkt
 (
@@ -82,8 +115,85 @@ END$$
 DELIMITER ;
 
 
+-- Rutine som henter samtlige Treningsøkter til gitt bruker
+DELIMITER $$
+CREATE PROCEDURE AlleTreningsøkter
+(
+  IN t_bnr    int(5)
+)
+BEGIN
+  SELECT * FROM Treningsøkt WHERE BNr = t_bnr;
+END$$
+DELIMITER ;
 
 
+
+-- Rutine som henter samtlige Treningsøkter til gitt bruker på gitt dato
+DELIMITER $$
+CREATE PROCEDURE DatoTreningsøkter
+(
+  IN t_bnr    int(5),
+  IN t_dato   date
+)
+BEGIN
+  SELECT * FROM Treningsøkt WHERE BNr = t_bnr AND Dato = t_dato;
+END$$
+DELIMITER ;
+
+
+-- Rutine som endrer brukerens preferanser
+DELIMITER $$
+CREATE PROCEDURE EndrePreferanser
+(
+  IN p_bnr       int(5),
+  IN p_mål       varchar(20),
+  IN p_aktivitet varchar(20)
+)
+BEGIN
+  UPDATE Preferanser 
+  SET Mål = p_mål, Aktivitetsnivå = p_aktivitet WHERE BNr = p_bnr;
+END$$
+DELIMITER ;
+
+
+-- Rutine som henter brukerens preferanser
+DELIMITER $$
+CREATE PROCEDURE HentPreferanser
+(
+  IN p_bnr       int(5)
+)
+BEGIN
+  SELECT * FROM Preferanser WHERE BNr = p_bnr;
+END$$
+DELIMITER ;
+
+
+-- Rutine som henter brukere til 'Topp 10' listen
+DELIMITER $$
+CREATE PROCEDURE HentTopp10()
+BEGIN
+  SELECT bruker.Brukernavn, treningsøkt.BNr, SUM(Minutter) 
+  FROM Treningsøkt 
+  INNER JOIN bruker ON treningsøkt.BNr=bruker.BNr 
+  GROUP BY BNr 
+  ORDER BY SUM(Minutter) 
+  DESC LIMIT 10;
+END$$
+DELIMITER ;
+
+
+
+
+
+
+
+
+
+
+
+--
+--  ############ Triggere ############
+--
 -- Trigger som oppretter preferanser for ny bruker
 DELIMITER $$
 CREATE TRIGGER ny_bruker_registrert
@@ -100,6 +210,14 @@ DELIMITER ;
 
 
 
+
+
+
+
+
+--
+--  ############ Tabell-Data ############
+--
 -- Data for tabell Bruker
 -- BNr er autonummerert (!)
 INSERT INTO Bruker (Epost, Brukernavn, Passord) VALUES
@@ -113,8 +231,6 @@ INSERT INTO Bruker (Epost, Brukernavn, Passord) VALUES
 ('geir@gmail.com', 'Geir', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
 ('hanne@gmail.com', 'Hanne', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
 ('ida@gmail.com', 'Ida', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.');
-
-
 
 
 -- Data for tabell Treningsøkt
@@ -175,15 +291,22 @@ INSERT INTO Treningsøkt (Dato, BNr, Øvelse, Minutter, Antall) VALUES
 
 
 
+
+
+
+
 --
--- Begrensninger for tabell Treningsøkt
+--  ############ Fremmednøkler ############
+--
+--
+-- Fremmednøkler for tabell Treningsøkt
 --
 ALTER TABLE Treningsøkt
   ADD CONSTRAINT TreningsøktBrukerFK FOREIGN KEY (BNr) REFERENCES Bruker (BNr);
 
 
 --
--- Begrensninger for tabell Preferanser
+-- Fremmednøkler for tabell Preferanser
 --
 ALTER TABLE Preferanser
   ADD CONSTRAINT PreferanserBrukerFK FOREIGN KEY (BNr) REFERENCES Bruker (BNr);

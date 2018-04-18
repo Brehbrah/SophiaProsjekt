@@ -23,7 +23,7 @@ function gyldigBruker($dblink, $brukernavn, $passord) {
   $_SESSION['innlogget'] = false;
 
   // prepared statement
-  $stmt = $dblink->prepare("SELECT * FROM bruker WHERE Brukernavn = ?");
+  $stmt = $dblink->prepare("CALL HentBruker(?)");
   $stmt->bind_param("s", $brukernavn);
   $stmt->execute();
   $stmt->bind_result($bnr, $epost, $navn, $dbpass);
@@ -73,7 +73,7 @@ function nyTreningsøkt($dblink, $bnr, $dato, $øvelse, $tid, $antall) {
 
 // Henter samtlige øvelser på gitt dato til innlogget bruker
 function hentTreninger($dblink, $bnr, $dato) { 
-  $sql = "SELECT * FROM Treningsøkt WHERE BNr = $bnr AND Dato = '$dato'"; 
+  $sql = "CALL DatoTreningsøkter($bnr, '$dato')"; 
   $svar = mysqli_query($dblink, $sql); 
   $data = "<table class='table table-sm table-hover' id='displayøvelser'>" . 
             "<thead class='thead-dark'>" . 
@@ -100,7 +100,7 @@ function hentTreninger($dblink, $bnr, $dato) {
 
 // Henter samtlige øvelser til innlogget bruker
 function hentAlleTreninger($dblink, $bnr) { 
-  $sql = "SELECT * FROM Treningsøkt WHERE BNr = $bnr"; 
+  $sql = "CALL AlleTreningsøkter($bnr)"; 
   $svar = mysqli_query($dblink, $sql); 
   $data = "<table class='table table-sm table-hover' id='displayøvelser'>" . 
             "<thead class='thead-dark'>" . 
@@ -127,7 +127,7 @@ function hentAlleTreninger($dblink, $bnr) {
 
 // Henter Statistikk over samtlige øvelser til innlogget bruker
 function hentStatistikk($dblink, $bnr) { 
-  $sql = "SELECT * FROM Treningsøkt WHERE BNr = $bnr"; 
+  $sql = "CALL AlleTreningsøkter($bnr)"; 
   $svar = mysqli_query($dblink, $sql); 
   $data = "<table class='table table-sm table-hover' id='displayøvelser'>" . 
             "<thead class='thead-dark'>" . 
@@ -181,7 +181,7 @@ function hentStatistikk($dblink, $bnr) {
 
 // Endrer brukerens preferanser
 function endrePreferanser($dblink, $bnr, $mål, $aktivitet) {
-  $sql = "UPDATE Preferanser SET Mål = '$mål', Aktivitetsnivå = '$aktivitet' WHERE BNr = $bnr";
+  $sql = "CALL EndrePreferanser($bnr, '$mål', '$aktivitet')";
   $resultat = mysqli_query($dblink, $sql);
   return $resultat;
 }
@@ -190,7 +190,7 @@ function endrePreferanser($dblink, $bnr, $mål, $aktivitet) {
 
 // Henter brukerens preferanser
 function hentPreferanser($dblink, $bnr) { 
-  $sql = "SELECT * FROM Preferanser WHERE BNr = $bnr"; 
+  $sql = "CALL HentPreferanser($bnr)"; 
   $resultat = mysqli_query($dblink, $sql); 
   $data = "";
   $antall = mysqli_num_rows($resultat);
@@ -209,7 +209,7 @@ function hentPreferanser($dblink, $bnr) {
 }
 
 function topTrening($dblink){
-  $sql = "SELECT bruker.Brukernavn, treningsøkt.BNr, SUM(Minutter) FROM Treningsøkt INNER JOIN bruker on treningsøkt.BNr=bruker.BNr GROUP BY BNr ORDER BY SUM(Minutter) DESC LIMIT 10";
+  $sql = "CALL HentTopp10()";
   $svar = mysqli_query($dblink, $sql);
   $data = "<table class='table table-striped table-dark'>" . 
             "<thead>" . 

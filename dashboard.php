@@ -22,7 +22,7 @@ topp();
         <hr class="my-4">
         <p class="lead text-muted">Velkommen til ditt dashboard, hva vil du gjøre nå?</p>
         <p>
-          <a href="treningsdagbok.php" class="btn btn-primary my-2">Dashboard</a>
+          <a href="dashboard.php" class="btn btn-primary my-2">Dashboard</a>
           <a href="treningsdagbok.php" class="btn btn-secondary my-2">Treningsdagbok</a>
           <a href="preferanser.php" class="btn btn-secondary my-2">Preferanser</a>
           <a href="treningsplan.php" class="btn btn-secondary my-2">Treningsplan</a>
