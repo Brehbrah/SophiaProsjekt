@@ -4,13 +4,8 @@ include_once "funksjoner.php";
 include_once "database.php";
 
 topp();
+navBar("contact");
 ?>
-
-	<div class="topnav">
-		  <a href="index.php">Hjem</a>
-		  <a class="active" href="contact.php">Kontakt</a>
-		  <a href="about.php">Om oss</a>
-	</div>
 
 <body>
 	<main>

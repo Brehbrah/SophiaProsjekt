@@ -4,18 +4,10 @@ include_once "funksjoner.php";
 include_once "database.php";
 
 topp();
+navBar("index");
 ?>
 
-
-	<div class="topnav">
-	  <a class="active" href="index.php">Hjem</a>
-	  <a href="contact.php">Kontakt</a>
-	  <a href="about.php">Om oss</a>
-	</div>
-	
-
-
-		<div class = "split-left">
+	<div class = "split-left">
 		<div class = "center">
 			<img src = "img/SophiaFront.png" alt = "Sophia">
 			<center><h4>Sophia</h4></center>

@@ -5,13 +5,9 @@ include_once "database.php";
 
 
 topp();
+navBar("about");
 ?>
 
-	<div class="topnav">
-		  <a href="index.php">Hjem</a>
-		  <a href="contact.php">Kontakt</a>
-		  <a class="active "href="about.php">Om oss</a>
-	</div>
 <body>
 	<main>
 		<br>

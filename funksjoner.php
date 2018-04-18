@@ -26,6 +26,25 @@ function bunn() {
 
 
 
+// Legger til Navigasjons-bar på index.php
+function navBar($valgt) {
+
+	echo "<div class='topnav'><a href='index.php'";
+	  if ($valgt == "index") {
+	  	echo " class='active'";
+	  }
+	  echo ">Hjem</a><a href='contact.php'";
+	  if ($valgt == "contact") {
+	  	echo " class='active'";
+	  }
+	  echo ">Kontakt</a><a href='about.php'";
+	  if ($valgt == "about") {
+	  	echo " class='active'";
+	  }
+	  echo ">Om oss</a></div>";
+}
+
+
 // Legger til Navigasjons-bar på dashboard sidene
 function navBarDash() {
 	echo "<div class='topnav'>
@@ -34,6 +53,7 @@ function navBarDash() {
 	    <a href='about.php'>Om oss</a>
 	</div>";
 }
+
 
 
 // Lager menyen som finnes på brukerens dashboard-sider
@@ -87,11 +107,6 @@ function menyDashboard($valgt, $tekst, $bruker) {
 		      </div>
 		    </section>";
 }
-
-
-
-
-
 
 
 ?>
