@@ -3,21 +3,9 @@ session_start();
 include_once "funksjoner.php";
 include_once "database.php";
 
-
-
-include_once "logginn.php";
-
 topp();
-
-
-
+navBar("contact");
 ?>
-
-	<div class="topnav">
-		  <a href="index.php">Home</a>
-		  <a class="active" href="contact.php">Contact</a>
-		  <a href="about.php">About</a>
-	</div>
 
 <body>
 	<main>
@@ -28,10 +16,6 @@ topp();
 		
 		
 	</main>
-	
-	<footer>
-		<p> © Sophia | Email: support@sophia.no | Telephone: 4444 4444 </p>
-	</footer>
 </body>
 
 <?php 
