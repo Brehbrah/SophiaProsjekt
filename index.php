@@ -7,7 +7,8 @@ topp();
 navBar("index");
 ?>
 
-	<div class = "split-left">
+	<div class="container2">
+		<div class = "split-left">
 		<div class = "center">
 			<img src = "img/SophiaFront.png" alt = "Sophia">
 			<center><h4>Sophia</h4></center>
@@ -51,8 +52,8 @@ navBar("index");
 		</div>
 
 		</div>
-		<br>
-		<br>
+	</div>
+		
 		<div class="topMeny" style="margin-top: 500px;">
 			<?php
 			topTrening(kobleOpp());

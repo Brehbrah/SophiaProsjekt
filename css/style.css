@@ -227,3 +227,8 @@ input[type=submit]:hover {
     padding: 20px;
 	width: 600px;
 }
+.container2 {
+  max-width: none|length|initial|inherit;
+  margin: 0 auto;
+  padding-top: 40px;
+}
