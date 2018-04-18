@@ -2,13 +2,6 @@
 
 namespace SimpleMail;
 
-/**
- * Powerful Class to send emails with PHP.
- *
- * @package   SimpleMail
- * @author    Pedro Rogério <pinceladasdaweb@hotmail.com>
- * @copyright 2016 Pedro Rogério <pinceladasdaweb@hotmail.com>
- */
 
 class SimpleMail
 {
