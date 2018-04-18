@@ -209,7 +209,7 @@ function hentPreferanser($dblink, $bnr) {
 }
 
 function topTrening($dblink){
-  $sql = "SELECT BNr, SUM(Minutter) FROM Treningsøkt GROUP BY 'BNr' DESC LIMIT 10";
+  $sql = "SELECT  BNr, SUM(Minutter) FROM Treningsøkt GROUP BY BNr ORDER BY 'Antall' DESC LIMIT 10";
   $svar = mysqli_query($dblink, $sql);
   $data = "<table class='table table-sm table-hover' id='displayøvelser'>" . 
             "<thead class='thead-dark'>" . 
