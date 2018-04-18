@@ -13,7 +13,10 @@ topp();
 	  <a href="about.php">Om oss</a>
 	</div>
 
-	<div class = "split left">
+	<div class="container">
+		<section = 
+
+		<div class = "split left">
 		<div class = "center">
 			<img src = "img/SophiaFront.png" alt = "Sophia">
 			<center><h4>Sophia</h4></center>
@@ -60,6 +63,10 @@ topp();
 			topTrening(kobleOpp());
 			?>
 		</div>
+		
+	</div>
+
+	
 
 		
 		<footer>
