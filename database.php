@@ -211,8 +211,8 @@ function hentPreferanser($dblink, $bnr) {
 function topTrening($dblink){
   $sql = "SELECT  BNr, SUM(Minutter) FROM Treningsøkt GROUP BY BNr ORDER BY 'Antall' DESC LIMIT 10";
   $svar = mysqli_query($dblink, $sql);
-  $data = "<table class='table table-sm table-hover' id='displayøvelser'>" . 
-            "<thead class='thead-dark'>" . 
+  $data = "<table class='table table-striped table-dark'>" . 
+            "<thead>" . 
               "<tr>" . 
                 "<th>BNr</th>" . 
                
@@ -221,7 +221,7 @@ function topTrening($dblink){
             "</thead>";
 
   while($rad = mysqli_fetch_assoc($svar)) { 
-    $data .= "<tr class='table-success'>" .
+    $data .= "<tr>" .
                 "<td>" . $rad['BNr'] . "</td>" .
                 "<td>" . $rad['SUM(Minutter)'] . "</td>" .
                
