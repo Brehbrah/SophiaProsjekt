@@ -56,9 +56,9 @@ topp();
 		</div>
 
 		<div>
-		<?php
-		topTrening(kobleOpp());
-		?>
+			<?php
+			topTrening(kobleOpp());
+			?>
 		</div>
 
 		

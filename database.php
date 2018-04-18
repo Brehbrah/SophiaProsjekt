@@ -214,15 +214,15 @@ function topTrening($dblink){
   $data = "<table class='table table-striped table-dark'>" . 
             "<thead>" . 
               "<tr>" . 
-                "<th>Brukernavn</th>" . 
-                "<th>BNr</th>" . 
-                "<th>min</th>" . 
+                "<th>Nr</th>" . 
+                "<th>Bruker</th>" . 
+                "<th>Score</th>" . 
             "</thead>";
-
+  $nr = 1;
   while($rad = mysqli_fetch_assoc($svar)) { 
     $data .= "<tr>" .
+                "<td>" . $nr++ . "</td>" .
                 "<td>" . $rad['Brukernavn'] . "</td>" .
-                "<td>" . $rad['BNr'] . "</td>" .
                 "<td>" . $rad['SUM(Minutter)'] . "</td>" .
               "</tr>";
   }
