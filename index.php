@@ -14,7 +14,7 @@ topp();
 	</div>
 	
 
-	<div class="Container2">
+	<div class="container2">
 		<div class = "split-left">
 		<div class = "center">
 			<img src = "img/SophiaFront.png" alt = "Sophia">
@@ -60,8 +60,7 @@ topp();
 
 		</div>
 	</div>
-		<br>
-		<br>
+		
 		<div class="topMeny" style="margin-top: 500px;">
 			<?php
 			topTrening(kobleOpp());
