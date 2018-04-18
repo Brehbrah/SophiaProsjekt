@@ -196,8 +196,15 @@ main p {
 .container {
     border-radius: 5px;
     padding: 20px;
-  width: 600px;
+    width: 400px;
+     clear: both;
 }
+
+.containerBMI input {
+  width: 100%;
+  clear: both;
+}
+
 .container2 {
   max-width: none|length|initial|inherit;
   margin: 0 auto;

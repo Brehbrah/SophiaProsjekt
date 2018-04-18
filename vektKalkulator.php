@@ -12,10 +12,10 @@ menyDashboard("bmi", "Her kan du regne ut din BMI basert på høyde og vekt.", $
 ?>
 
 
-    <div class="container" id="treningsdagbok">
+    <div class="container containerBMI" id="treningsdagbok">
       <table border = "0">
           <tr>
-            <td><h1>Din BMI Kalkulator</h1></td>
+            <td><h1>BMI Kalkulator</h1></td>
           </tr>
           <tr>
             <td><p>Høyde: <input type="text" id="height"/></p></td>
