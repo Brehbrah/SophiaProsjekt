@@ -20,7 +20,7 @@ menyDashboard("treningsdagbok", "Dette er din treningsdagbok - her legger du inn
 		  </div>
 		  <div class="form-group">
 		    <label>Øvelse</label>
-		    <select class="form-control" id="øvelse" name="øvelse" required>
+		    <select class="form-control" id="øvelse" name="øvelse">
 		      <option></option>
 		      <option>Løping</option>
 		      <option>Svømming</option>
@@ -30,14 +30,15 @@ menyDashboard("treningsdagbok", "Dette er din treningsdagbok - her legger du inn
 		  </div>
 		  <div class="form-group">
 		    <label>Tidsforbruk (minutter)</label>
-		    <input type="number" class="form-control" id="tid" name="tid" required>
+		    <input type="number" class="form-control" id="tid" name="tid">
 		  </div>
 		  <div class="form-group">
 		    <label id="antLabel">Antall km løpt</label>
-		    <input type="number" class="form-control" id="antall" name="antall" required>
+		    <input type="number" class="form-control" id="antall" name="antall">
 		  </div>
 		  <div class="form-group">
-		    <input type="submit" value="Legg til" class="btn btn-primary btn-sm">
+		    <input type="submit" value="Legg til" name="leggtil" class="btn btn-primary btn-sm">
+		    <input type="submit" value="Slett" name="slett" class="btn btn-primary btn-sm">
 		  </div>
 		</form>
 		<div id="display"></div>

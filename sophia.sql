@@ -19,6 +19,7 @@ DROP TRIGGER IF EXISTS ny_bruker_registrert;
 DROP PROCEDURE IF EXISTS NyBruker;
 DROP PROCEDURE IF EXISTS HentBruker;
 DROP PROCEDURE IF EXISTS NyTreningsøkt;
+DROP PROCEDURE IF EXISTS SlettTreningsøkt;
 DROP PROCEDURE IF EXISTS AlleTreningsøkter;
 DROP PROCEDURE IF EXISTS DatoTreningsøkter;
 DROP PROCEDURE IF EXISTS EndrePreferanser;
@@ -117,6 +118,20 @@ CREATE PROCEDURE NyTreningsøkt
 BEGIN
   INSERT INTO Treningsøkt (Dato, BNr, Øvelse, Minutter, Antall)
   VALUES (t_dato, t_bnr, t_øvelse, t_min, t_ant);
+END$$
+DELIMITER ;
+
+
+-- Rutine som sletter Treningsøkter på gitt dato
+DELIMITER $$
+CREATE PROCEDURE SlettTreningsøkt
+(
+  IN t_dato   date,
+  IN t_bnr    int(5)
+)
+BEGIN
+  DELETE FROM Treningsøkt
+  WHERE Dato = t_dato AND BNr = t_bnr;
 END$$
 DELIMITER ;
 

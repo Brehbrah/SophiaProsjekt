@@ -71,6 +71,13 @@ function nyTreningsøkt($dblink, $bnr, $dato, $øvelse, $tid, $antall) {
   return $resultat;
 }
 
+// Sletter brukerens Treningsøkter på valgt dato i databasen
+function slettTreningsøkt($dblink, $bnr, $dato) {
+  $sql = "CALL SlettTreningsøkt('$dato', $bnr)";
+  $resultat = mysqli_query($dblink, $sql);
+  return $resultat;
+}
+
 // Henter samtlige øvelser på gitt dato til innlogget bruker
 function hentTreninger($dblink, $bnr, $dato) { 
   $sql = "CALL DatoTreningsøkter($bnr, '$dato')"; 
