@@ -8,7 +8,7 @@ navBar("contact");
 ?>
 
 <body>
-	<main>
+	<main style="height: 600px">
 	<br>
 		<h1>Kontakt skjema</h1>
 		<div class="container" >

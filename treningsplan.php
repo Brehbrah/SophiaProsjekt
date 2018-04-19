@@ -18,12 +18,13 @@ menyDashboard("treningsplan", "Når du har lagt inn dine preferanser vil jeg lag
             <p class="lead">Dette er et treningsprogram for deg som ønsker å få bedre kondisjon gjennom sykkeltrening. Sykling er en sunn, lav-effekt-øvelse som kan nytes av mennesker i alle aldre, fra små barn til eldre voksne. Det er også morsomt, billig og bra for miljøet.
 			</p>
             <br>
+            <h2> Treningsprogram</h2>
             <table class="table2">
 				<tr><td class="td2"> Nr </td> <td class="td2"> Aktivitet </td> <td class="td2">Repitisjon</td></tr>
-				<tr><td class="td2"> 1 </td>	<td class="td2"> Svøming </td>	<td class="td2"> 1 time</td></tr>
-				<tr><td class="td2"> 2 </td>	<td class="td2"> Løping </td>	<td class="td2"> 1 time/4 </td></tr>
-				<tr><td class="td2"> 5 </td>	<td class="td2"> Sykling </td>	<td class="td2"> 1 time </td></tr>
-				<tr><td class="td2"> 8 </td>	<td class="td2"> Vektløfting </td>	<td class="td2"> 1 time </td></tr>
+				<tr><td class="td2"> 1 </td>	<td class="td2"> Sykling </td>	<td class="td2"> 4 timer</td></tr>
+				<tr><td class="td2"> 2 </td>	<td class="td2"> Tur </td>	<td class="td2"> 3 timer </td></tr>
+				<tr><td class="td2"> 5 </td>	<td class="td2"> Svømming </td>	<td class="td2"> 1 time </td></tr>
+				<tr><td class="td2"> 8 </td>	<td class="td2"> Massasje </td>	<td class="td2"> 1 time </td></tr>
 			</table>
           </div>
           <div class="col-md-5">
