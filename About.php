@@ -16,7 +16,6 @@ navBar("about");
           <p class="lead text-muted">Dette er en eksamensoppgave for våren 2018 under universitetet i Sørøst-Norge, Bø i Telemark</p>
           <p>
             <a href="https://www.usn.no/" class="btn btn-primary my-2" style="width: 150px;">usn.no</a>
-            <a href="https://aktivtrening.com/" class="btn btn-secondary my-2" style="width: 150px;">aktivtrening.com</a>
           </p>
       </div>
 
@@ -42,7 +41,6 @@ navBar("about");
           <p>magnusbergquist-<br>77@gmail.com</p>
           <a href="mailto:magnusbergquist77@gmail.com"><button type="submit" class="btn btn-info btn-lg" value="Send">Kontakt</button></a>
         </div><!-- /.col-lg-4 -->
-      </div>
   </main>
   
 </body>
