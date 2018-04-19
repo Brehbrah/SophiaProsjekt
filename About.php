@@ -50,7 +50,7 @@ navBar("about");
           <p><button class="alfa">Kontakt</button></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <img class="rounded-circle" src="img/mag.jpg" alt="Magnus" width="140" height="140">
           <h2>Magnus Åby Bergquist</h2>
           <p>Jeg håper at vår nettsida har hjulpet deg, og hvis du sliter kan du kontakte meg :)</p>
           <p>magnusbergquist77@gmail.com</p>
