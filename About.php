@@ -9,7 +9,7 @@ navBar("about");
 ?>
 
 <body>
-  <main>
+  <main style="margin-bottom: 100px;">
       <div class="container">
           <h1 class="jumbotron-heading">Sophia</h1>
           <p class="lead text-muted">Formålet med denne applikasjonen er å gi brukeren oversikt over treningsaktiviteten sin. Sophia kan også gi brukeren en tilrettelagt treningsplan.</p>
@@ -25,6 +25,7 @@ navBar("about");
           <h2>Qasim Iyas Abdi</h2>
           <p>Jeg er bare en som ønsker å gjøre treningsplanen til brukerene våre enklere.</p>
           <p>Kasim300@hotmail.com</p>
+          <br><br>
          <a href="mailto:Kasim300@hotmail.com"><button type="submit" class="btn btn-info btn-lg" value="Send">Kontakt</button></a>
          </div>
          <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
@@ -32,6 +33,7 @@ navBar("about");
           <h2>Khoi Nguyen Hoang</h2>
           <p>Ønsker at alle skal få seg en muligheten til å oppnå realistisk resultat</p>
           <p>khoii87@gmail.com</p>
+          <br>
           <a href="mailto:khoii87@gmail.com"><button type="submit" class="btn btn-info btn-lg" value="Send">Kontakt</button></a>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
@@ -39,6 +41,7 @@ navBar("about");
           <h2>Vidar Årvik</h2>
           <p>Ønsker at alle skal få mulighet til å følge sin fremgang.</p>
           <p>vidaraarvik@gmail.com</p>
+          <br><br><br><br>
          <a href="mailto:vidaraarvik@gmail.com"><button type="submit" class="btn btn-info btn-lg" value="Send">Kontakt</button></a>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
@@ -46,6 +49,7 @@ navBar("about");
           <h2>Tom</h2>
           <p>Ingen resultat eller progress? ta kontakt med meg!  :)</p>
           <p>viettran_95@hotmail.com</p>
+          <br><br><br><br>
           <a href="mailto:viettran_95@hotmail.com"><button type="submit" class="btn btn-info btn-lg" value="Send">Kontakt</button></a>
           </div>
         <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
