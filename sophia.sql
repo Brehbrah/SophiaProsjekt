@@ -244,7 +244,7 @@ DELIMITER ;
 INSERT INTO Bruker (Epost, Brukernavn, Passord) VALUES
 ('admin@admin.com', 'admin', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
 ('arne@gmail.com', 'Arne', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
-('bjørn@gmail.com', 'Bjørn', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
+('bjørn@gmail.com', 'Bjørnar', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
 ('cathrine@gmail.com', 'Cathrine', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
 ('daniel@gmail.com', 'Daniel', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
 ('erik@gmail.com', 'Erik', '$2y$10$abv9pRRmWCntXL42.HIBSuCNmFqvl7BSJGqMtDivzXMYsUU8D5xQ.'),
