@@ -25,22 +25,22 @@ navBar("about");
           <img class="rounded-circle" src="img/Qasim.jpg" alt="Qasim" width="140" height="140">
           <h2>Qasim Iyas Abdi</h2>
           <p>Jeg er bare en som ønsker å gjøre treningsplanen til brukerene våre enklere.</p>
-        	<p>Kasim300@hotmail.com</p>
-         <p><button class="alfa">Kontakt</button></p>
+          <p>Kasim300@hotmail.com</p>
+         <a href="mailto:Kasim300@hotmail.com"><button type="submit" class="btn btn-info btn-lg" value="Send">Kontakt</button></a>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
           <img class="rounded-circle" src="img/vidar.PNG" alt="Generic placeholder image" width="140" height="140">
           <h2>Vidar Årvik</h2>
           <p>Ønsker at alle skal få mulighet til å følge sin fremgang.</p>
-        	<p>vidaraarvik@gmail.com</p>
-         <p><button class="alfa">Kontakt</button></p>
+          <p>vidaraarvik@gmail.com</p>
+         <a href="vidaraarvik@gmail.com"><button type="submit" class="btn btn-info btn-lg" value="Send">Kontakt</button></a>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
           <img class="rounded-circle" src="img/mag.jpg" alt="Magnus" width="140" height="140">
           <h2>Magnus Åby Bergquist</h2>
           <p>Jeg håper at vår nettsida har hjulpet deg, og hvis du sliter kan du kontakte meg :)</p>
-          <p>magnusbergquist77@gmail.com</p>
-          <p><button class="alfa">Kontakt</button></p>
+          <p>magnusbergquist-<br>77@gmail.com</p>
+          <a href="mailto:magnusbergquist77@gmail.com"><button type="submit" class="btn btn-info btn-lg" value="Send">Kontakt</button></a>
         </div><!-- /.col-lg-4 -->
       </div>
   </main>
