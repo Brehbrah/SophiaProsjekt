@@ -11,7 +11,7 @@ navBarDash();
 menyDashboard("treningsplan", "Når du har lagt inn dine preferanser vil jeg lage en plan for deg.", $bruker);
 ?>
 
-<main style="height: 1250px;">
+<main style="height: 1350px;">
 <div class="row featurette" style="padding: 40px;">
           <div class="col-md-7">
             <h2 class="featurette-heading"> Sykkeltrening </h2>
@@ -37,6 +37,7 @@ menyDashboard("treningsplan", "Når du har lagt inn dine preferanser vil jeg lag
             <h2 class="featurette-heading"> Styrke </h2>
             <p class="lead">Vi har gjort det enklere å bli sterk på rekordtid. Gi den forsømte ryggen og de slappe armene en effektiv treningsøkt – Det tar bare 30 minutter. Det eneste du trenger er et sett håndvekter og litt gulvplass.</p>
             <br>
+            <h2> Treningsprogram</h2>
              <table class="table2">
 				<tr><td class="td2"> Nr </td> <td class="td2"> Aktivitet </td> <td class="td2">Repitisjon</td></tr>
 				<tr><td class="td2"> 1 </td>	<td class="td2"> Svøming </td>	<td class="td2"> 1 time</td></tr>
@@ -55,6 +56,7 @@ menyDashboard("treningsplan", "Når du har lagt inn dine preferanser vil jeg lag
             <h2 class="featurette-heading"> Intervaltrening </h2>
             <p class="lead">Programmet for deg som gjerne vil øke hastigheten. Vi gir deg bedre kondisjon, øker forbrenningen og gjør deg på alle måter til en bedre løper. Hvis du ikke driver med intervalltrening allerede, vil formkurven gå rett til himmels.</p>
             <br>
+            <h2> Treningsprogram</h2>
               <table class="table2">
 				<tr><td class="td2"> Nr </td> <td class="td2"> Aktivitet </td> <td class="td2">Repitisjon</td></tr>
 				<tr><td class="td2"> 1 </td>	<td class="td2"> Svøming </td>	<td class="td2"> 1 time</td></tr>
