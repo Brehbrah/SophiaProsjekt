@@ -21,7 +21,7 @@ navBar("contact");
 			<input type="text" name="mail"><br>
 			Kommentar:<br>
 			<input type="text" style="height:150px" name="comment" size="50"><br><br>
-			<input type="submit" value="Send">
+			<button type="submit" class="btn btn-info btn-lg" value="Send">Send</button></a>
 			</form>
 		</div>
 		</div>
