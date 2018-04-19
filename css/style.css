@@ -170,13 +170,8 @@ main {
 
 footer {
   background-color: #444444;
-  width: 100%;
-  height: 70px;
-  position: fixed;
-  margin: auto;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  height: 60px;
+  margin: auto 0;	
 }
 
 footer p {
@@ -210,3 +205,5 @@ main p {
   margin: 0 auto;
   padding-top: 300px;
 }
+
+

@@ -53,8 +53,8 @@ navBar("index");
 
 		</div>
 	</div>
-		
 		<div class="topMeny" style="margin-top: 500px;">
+			<h2>Ranking! Hvem har gjort det best med treningen?</h2>
 			<?php
 			topTrening(kobleOpp());
 			?>
