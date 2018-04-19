@@ -214,7 +214,7 @@ function topTrening($dblink){
   $data = "<table class='table table-striped table-dark'>" . 
             "<thead>" . 
               "<tr>" . 
-                "<th>Nr</th>" . 
+                "<th>#</th>" . 
                 "<th>Bruker</th>" . 
                 "<th>Score</th>" . 
             "</thead>";

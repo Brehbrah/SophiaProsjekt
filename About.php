@@ -26,35 +26,35 @@ navBar("about");
           <h2>Qasim Iyas Abdi</h2>
           <p>Jeg er bare en som ønsker å gjøre treningsplanen til brukerene våre enklere.</p>
         	<p>Kasim300@hotmail.com</p>
-         <p><button class="alfa">Contact</button></p>
+         <p><button class="alfa">Kontakt</button></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
+          <img class="rounded-circle" src="img/vidar.PNG" alt="Generic placeholder image" width="140" height="140">
+          <h2>Vidar Årvik</h2>
+          <p>Ønsker at alle skal få mulighet til å følge sin fremgang.</p>
+        	<p>vidaraarvik@gmail.com</p>
+         <p><button class="alfa">Kontakt</button></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
           <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           <h2>Heading</h2>
           <p>Some text that describes me lorem ipsum ipsum lorem.</p>
         	<p>example@example.com</p>
-         <p><button class="alfa">Contact</button></p>
+          <p><button class="alfa">Kontakt</button></p></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
           <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           <h2>Heading</h2>
           <p>Some text that describes me lorem ipsum ipsum lorem.</p>
         	<p>example@example.com</p>
-          <p><button class="alfa">Contact</button></p></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        	<p>example@example.com</p>
-          <p><button class="alfa">Contact</button></p>
+          <p><button class="alfa">Kontakt</button></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
           <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           <h2>Heading</h2>
          	<p>Some text that describes me lorem ipsum ipsum lorem.</p>
         	<p>example@example.com</p>
-          <p><button class="alfa">Contact</button></p>
+          <p><button class="alfa">Kontakt</button></p>
         </div><!-- /.col-lg-4 -->
       </div>
 	</main>
