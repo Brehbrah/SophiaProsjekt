@@ -26,14 +26,28 @@ navBar("about");
           <p>Jeg er bare en som ønsker å gjøre treningsplanen til brukerene våre enklere.</p>
           <p>Kasim300@hotmail.com</p>
          <a href="mailto:Kasim300@hotmail.com"><button type="submit" class="btn btn-info btn-lg" value="Send">Kontakt</button></a>
+         </div>
+         <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
+          <img class="rounded-circle" src="" alt="Magnus" width="140" height="140">
+          <h2>Khoi</h2>
+          <p>Komentar</p>
+          <p>Hotmail adressen din</p>
+          <a href="mailto:Hotmail adressen din"><button type="submit" class="btn btn-info btn-lg" value="Send">Kontakt</button></a>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
           <img class="rounded-circle" src="img/vidar.PNG" alt="Generic placeholder image" width="140" height="140">
           <h2>Vidar Årvik</h2>
           <p>Ønsker at alle skal få mulighet til å følge sin fremgang.</p>
           <p>vidaraarvik@gmail.com</p>
-         <a href="vidaraarvik@gmail.com"><button type="submit" class="btn btn-info btn-lg" value="Send">Kontakt</button></a>
+         <a href="mailto:vidaraarvik@gmail.com"><button type="submit" class="btn btn-info btn-lg" value="Send">Kontakt</button></a>
         </div><!-- /.col-lg-4 -->
+        <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
+          <img class="rounded-circle" src="" alt="Magnus" width="140" height="140">
+          <h2>Tom</h2>
+          <p>Komentar :)</p>
+          <p>Hotmail adressen din</p>
+          <a href="mailto:Hotmail adressen din"><button type="submit" class="btn btn-info btn-lg" value="Send">Kontakt</button></a>
+          </div>
         <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
           <img class="rounded-circle" src="img/mag.jpg" alt="Magnus" width="140" height="140">
           <h2>Magnus Åby Bergquist</h2>
