@@ -30,5 +30,6 @@ navBar("contact");
 
 <?php 
 lukk($dblink);
+footer();
 bunn(); 
 ?>

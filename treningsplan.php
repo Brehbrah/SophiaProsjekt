@@ -72,4 +72,7 @@ menyDashboard("treningsplan", "Når du har lagt inn dine preferanser vil jeg lag
       </main>
 
 
-<?php bunn(); ?>
+<?php
+statFooter();
+bunn();
+?>

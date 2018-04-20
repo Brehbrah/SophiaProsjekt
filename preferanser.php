@@ -48,9 +48,12 @@ menyDashboard("preferanser", "Her velger du dine mål. Ut fra dette vil jeg bere
       </div>
     </form>
     <div id="display"></div>
-  </div>
+  </div><br>
   
 
   
   
-<?php bunn(); ?>
+<?php
+footer();
+bunn();
+?>

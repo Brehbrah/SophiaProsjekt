@@ -34,4 +34,7 @@ menyDashboard("dashboard", "Velkommen til ditt dashboard, hva vil du gjøre nå?
     </section>
 	
 	
-<?php bunn(); ?>
+<?php
+footer();
+bunn();
+?>

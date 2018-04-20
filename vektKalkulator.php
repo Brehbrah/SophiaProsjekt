@@ -31,11 +31,12 @@ menyDashboard("bmi", "Her kan du regne ut din BMI basert på høyde og vekt.", $
               </td>
             </tr>
        </table>
-    </div>
+    </div><br>
 
 
 
 	
-<?php 
+<?php
+footer();
 bunn(); 
 ?>

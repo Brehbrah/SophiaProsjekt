@@ -42,11 +42,12 @@ menyDashboard("treningsdagbok", "Dette er din treningsdagbok - her legger du inn
 		  </div>
 		</form>
 		<div id="display"></div>
-	</div>
+	</div><br>
 
 
 
 <?php 
 lukk($dblink);
+footer();
 bunn(); 
 ?>

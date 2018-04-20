@@ -6,12 +6,11 @@ include_once "database.php";
 topp();
 navBar("index");
 ?>
-
 	<div class="container2">
 		<div class = "split-left">
 		<div class = "center">
 			<img src = "img/SophiaFront.png" alt = "Sophia">
-			<center><h4>Sophia</h4></center>
+			<center><p class="h4">Sophia</p></center>
 			<center><p>Veileder | Coach | Venn</p></center>
 		</div>
 	</div>

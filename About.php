@@ -46,7 +46,7 @@ navBar("about");
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); margin: auto;">
           <img class="rounded-circle" src="img/tom.png" alt="Tom" width="140" height="140">
-          <h2>Tom</h2>
+          <h2>Tom Tran</h2>
           <p>Ingen resultat eller progress? ta kontakt med meg!  :)</p>
           <p>viettran_95@hotmail.com</p>
           <br><br><br><br>
@@ -65,5 +65,6 @@ navBar("about");
 
 <?php 
 lukk($dblink);
+footer();
 bunn(); 
 ?>

@@ -20,7 +20,6 @@ function topp() {
 
 // Legger til lik bunn på alle websider
 function bunn() {
-	footer();
 	echo "</body>
 		</html>";
 }
@@ -29,6 +28,13 @@ function bunn() {
 // Legger til footer
 function footer() {
 	echo "<footer>
+			<p> © Sophia | Epost: support@sophia.no | Telefon: 54 45 32 23 </p>
+		  </footer>";
+}
+
+// Legger til static footer
+function statFooter() {
+	echo "<footer class='staticFooter'>
 			<p> © Sophia | Epost: support@sophia.no | Telefon: 54 45 32 23 </p>
 		  </footer>";
 }
